@@ -1,0 +1,113 @@
+{
+  "new_releases_intro": "Fresh releases from Jackson Murphy, now streaming on Apple Music and Spotify.",
+  "new_releases": [
+    {
+      "title": "Love Speaks Still",
+      "badge": "New Single",
+      "image": "assets/music-love-speaks-still.jpg",
+      "alt": "Love Speaks Still cover art",
+      "description": "A radiant, heart-forward single about enduring love, warmth, and spiritual connection.",
+      "apple_url": "https://music.apple.com/us/album/love-speaks-still-single/1866964923",
+      "spotify_url": "https://open.spotify.com/album/4NJVd3V5kaOcLx8LnWq5xO?si=heoW1S2nR8OC6bO0ZuvjTQ"
+    },
+    {
+      "title": "Fly In Your Sky",
+      "badge": "New Single",
+      "image": "assets/music-fly-in-your-sky.jpg",
+      "alt": "Fly In Your Sky cover art",
+      "description": "A luminous, airy single about release, trust, and letting love move freely.",
+      "apple_url": "https://music.apple.com/us/album/fly-in-your-sky-single/1890783794",
+      "spotify_url": "https://open.spotify.com/album/7FmZnhKcCvQvsh75xtc1GG?si=tetWV1I9SKSe5LTdJGIBRQ",
+      "featured": true
+    },
+    {
+      "title": "By Name",
+      "badge": "New Single",
+      "image": "assets/music-by-name.jpg",
+      "alt": "By Name cover art",
+      "description": "A tender, reflective single rooted in identity, grace, and being fully known.",
+      "apple_url": "https://music.apple.com/us/album/by-name-single/1890372718",
+      "spotify_url": "https://open.spotify.com/album/2edlAmhrEEjJyUkqYnkkkP?si=6_6648CKTACwComwkpVFGw"
+    },
+    {
+      "title": "A Million Times",
+      "badge": "New Single",
+      "image": "assets/music-a-million-times.jpg",
+      "alt": "A Million Times cover art",
+      "description": "An expansive, emotional single carried by memory, devotion, and longing.",
+      "apple_url": "https://music.apple.com/us/album/a-million-times-single/1890351999",
+      "spotify_url": "https://open.spotify.com/album/6Z9E1eptmh02gBRDtECFwl?si=3sP8yYSCRu2ZtOXWoBHmlQ"
+    },
+    {
+      "title": "You Don’t Have to Fly",
+      "badge": "New Single",
+      "image": "assets/music-you-dont-have-to-fly.jpg",
+      "alt": "You Don’t Have to Fly cover art",
+      "description": "A calming single about rest, safety, and the freedom of staying grounded.",
+      "apple_url": "https://music.apple.com/us/album/you-dont-have-to-fly-single/1890214238",
+      "spotify_url": "https://open.spotify.com/album/1Qdx3HpRD664SJkrJSe0Ia?si=QQ3EEsX9RWm8Pio9iokvFA"
+    },
+    {
+      "title": "Under The Weeping Willow",
+      "badge": "New Single",
+      "image": "assets/music-under-the-weeping-willow.jpg",
+      "alt": "Under The Weeping Willow cover art",
+      "description": "A quiet, immersive release shaped by grief, gentleness, and sheltering presence.",
+      "apple_url": "https://music.apple.com/us/album/under-the-weeping-willow-single/1890147879",
+      "spotify_url": "https://open.spotify.com/album/5a2Zpcw8kkUkEAYqm0PCyh?si=40_Mm6KNTIKuhdoVGU0x6A"
+    },
+    {
+      "title": "You’ll Stay",
+      "badge": "New Single",
+      "image": "assets/music-youll-stay-v2.jpg",
+      "alt": "You’ll Stay cover art",
+      "description": "A spacious, reassuring single about steadiness, presence, and staying through the storm.",
+      "apple_url": "https://music.apple.com/us/album/youll-stay-v2-single/1890114343",
+      "spotify_url": "https://open.spotify.com/album/103Osb95VDZ07X9fwBevSO?si=-93eajYgSEOsXaCVCVjdUA"
+    },
+    {
+      "title": "Held By You",
+      "badge": "New Single",
+      "image": "assets/music-held-by-you.jpg",
+      "alt": "Held By You cover art",
+      "description": "A grounded, storm-worn single about comfort, endurance, and being carried by love.",
+      "apple_url": "https://music.apple.com/us/album/held-by-you-single/1888075758",
+      "spotify_url": "https://open.spotify.com/album/7vBy8YIKr8Hag209xAelSH?si=CRG1eK7VTBy21tp4G1QJhw"
+    }
+  ],
+  "catalog_heading": "More Music",
+  "catalog": [
+    {
+      "title": "Faith 1",
+      "image": "assets/music-faith-1.jpg",
+      "alt": "Faith 1 cover art",
+      "description": "Earlier release from Jackson Murphy, available across major platforms.",
+      "apple_url": "https://music.apple.com/us/artist/jackson-murphy/1792083952",
+      "spotify_url": "https://open.spotify.com/artist/6kU8f5A21ItGvAr1OmvpvP"
+    },
+    {
+      "title": "Heal (Love Still Holds)",
+      "image": "assets/music-heal.jpg",
+      "alt": "Heal cover art",
+      "description": "Atmospheric storytelling in song, still streaming across major platforms.",
+      "apple_url": "https://music.apple.com/us/artist/jackson-murphy/1792083952",
+      "spotify_url": "https://open.spotify.com/artist/6kU8f5A21ItGvAr1OmvpvP"
+    },
+    {
+      "title": "Shine",
+      "image": "assets/music-shine.jpg",
+      "alt": "Shine cover art",
+      "description": "A heart-led release in the Rising Creative Agency catalog.",
+      "apple_url": "https://music.apple.com/us/artist/jackson-murphy/1792083952",
+      "spotify_url": "https://open.spotify.com/artist/6kU8f5A21ItGvAr1OmvpvP"
+    },
+    {
+      "title": "RISE",
+      "image": "assets/music-rise.jpg",
+      "alt": "RISE cover art",
+      "description": "Part of the Rising Creative Agency sound catalog.",
+      "apple_url": "https://music.apple.com/us/artist/jackson-murphy/1792083952",
+      "spotify_url": "https://open.spotify.com/artist/6kU8f5A21ItGvAr1OmvpvP"
+    }
+  ]
+}

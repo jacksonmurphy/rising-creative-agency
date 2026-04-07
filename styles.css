@@ -262,3 +262,16 @@ h3 { font-size: 1.2rem; }
   .hero-book { text-align: center; }
   .book-layout { grid-template-columns: 1fr; }
 }
+
+.section-lead {
+  margin-bottom: 1.2rem;
+}
+
+.new-release-grid {
+  align-items: stretch;
+}
+
+.featured-release {
+  border-color: color-mix(in oklab, var(--accent) 35%, var(--line) 65%);
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--accent) 16%, transparent 84%);
+}
