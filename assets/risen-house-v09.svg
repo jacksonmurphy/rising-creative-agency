@@ -1,0 +1,13 @@
+<svg width="480" height="480" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RISEN HOUSE v09 emblem only">
+  <rect width="480" height="480" rx="28" fill="#F3F1EB"/>
+  <circle cx="240" cy="240" r="124" fill="none" stroke="#222831" stroke-width="5"/>
+  <line x1="160" y1="272" x2="320" y2="272" stroke="#222831" stroke-width="5" stroke-linecap="round"/>
+  <path d="M176 272 A64 64 0 0 1 304 272" fill="none" stroke="#222831" stroke-width="5" stroke-linecap="round"/>
+  <line x1="183" y1="255" x2="132" y2="220" stroke="#222831" stroke-width="4" stroke-linecap="round"/>
+  <line x1="195" y1="235" x2="155" y2="185" stroke="#222831" stroke-width="4" stroke-linecap="round"/>
+  <line x1="218" y1="219" x2="190" y2="156" stroke="#222831" stroke-width="4" stroke-linecap="round"/>
+  <line x1="240" y1="214" x2="240" y2="145" stroke="#222831" stroke-width="4" stroke-linecap="round"/>
+  <line x1="262" y1="219" x2="290" y2="156" stroke="#222831" stroke-width="4" stroke-linecap="round"/>
+  <line x1="285" y1="235" x2="325" y2="185" stroke="#222831" stroke-width="4" stroke-linecap="round"/>
+  <line x1="297" y1="255" x2="348" y2="220" stroke="#222831" stroke-width="4" stroke-linecap="round"/>
+</svg>

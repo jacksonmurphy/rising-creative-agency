@@ -1,0 +1,22 @@
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(300 260) rotate(45) scale(980)">
+      <stop stop-color="#1F3A52"/>
+      <stop offset="0.55" stop-color="#111827"/>
+      <stop offset="1" stop-color="#0B1020"/>
+    </radialGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1000" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67E8F9"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="1000" rx="220" fill="url(#bg)"/>
+  <rect x="22" y="22" width="956" height="956" rx="198" stroke="url(#ring)" stroke-opacity="0.65" stroke-width="10"/>
+
+  <g opacity="0.95">
+    <text x="500" y="470" text-anchor="middle" fill="#67E8F9" style="font-family: Inter, Arial, sans-serif; font-size: 170px; font-weight: 800; letter-spacing: 0.08em;">RCA</text>
+    <text x="500" y="565" text-anchor="middle" fill="#E5E7EB" style="font-family: Inter, Arial, sans-serif; font-size: 42px; font-weight: 600; letter-spacing: 0.2em;">RISING CREATIVE</text>
+    <text x="500" y="618" text-anchor="middle" fill="#9CA3AF" style="font-family: Inter, Arial, sans-serif; font-size: 34px; font-weight: 500; letter-spacing: 0.22em;">AGENCY</text>
+  </g>
+</svg>
