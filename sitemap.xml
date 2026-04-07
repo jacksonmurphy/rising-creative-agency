@@ -35,4 +35,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://risingcreativeagency.com/books/the-house-the-architect-restored</loc>
+  </url>
+  <url>
+    <loc>https://risingcreativeagency.com/books/the-dove-the-warrior-and-the-healer</loc>
+  </url>
+  <url>
+    <loc>https://risingcreativeagency.com/books/the-shepherd-who-calls-you-by-name</loc>
+  </url>
+
+  <url>
+    <loc>https://risingcreativeagency.com/books/the-weeping-willow</loc>
+  </url>
 </urlset>

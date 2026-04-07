@@ -2,15 +2,6 @@
   "new_releases_intro": "Fresh releases from Jackson Murphy, now streaming on Apple Music and Spotify.",
   "new_releases": [
     {
-      "title": "Love Speaks Still",
-      "badge": "New Single",
-      "image": "assets/music-love-speaks-still.jpg",
-      "alt": "Love Speaks Still cover art",
-      "description": "A radiant, heart-forward single about enduring love, warmth, and spiritual connection.",
-      "apple_url": "https://music.apple.com/us/album/love-speaks-still-single/1866964923",
-      "spotify_url": "https://open.spotify.com/album/4NJVd3V5kaOcLx8LnWq5xO?si=heoW1S2nR8OC6bO0ZuvjTQ"
-    },
-    {
       "title": "Fly In Your Sky",
       "badge": "New Single",
       "image": "assets/music-fly-in-your-sky.jpg",
