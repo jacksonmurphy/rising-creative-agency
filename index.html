@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rising Creative Agency — Work that rises with purpose.</title>
-  <meta name="description" content="Rising Creative Agency creates books, music, and visual storytelling rooted in healing, intention, and soul-led growth." />
+  <title>Rising Creative Agency | Heal. Reset. Rise.</title>
+  <meta name="description" content="Start your free 7-day reset, then go deeper with guided books, music, and reflection experiences from Rising Creative Agency." />
   <meta name="p:domain_verify" content="039f8b2e3ce26d38673093ce6cd0a85a"/>
   <meta name="robots" content="index,follow,max-image-preview:large" />
-  <meta name="theme-color" content="#111827" />
-
+  <meta name="theme-color" content="#081225" />
   <link rel="canonical" href="https://risingcreativeagency.com/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Rising Creative Agency" />
-  <meta property="og:title" content="Rising Creative Agency — Work that rises with purpose." />
-  <meta property="og:description" content="Books, music, and visual storytelling rooted in healing, intention, and soul-led growth." />
+  <meta property="og:title" content="Rising Creative Agency | Heal. Reset. Rise." />
+  <meta property="og:description" content="Start your free 7-day reset, then go deeper with guided books, music, and reflection experiences." />
   <meta property="og:url" content="https://risingcreativeagency.com/" />
   <meta property="og:image" content="https://risingcreativeagency.com/assets/social-share.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -22,8 +21,8 @@
   <meta property="og:image:alt" content="Rising Creative Agency social preview" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Rising Creative Agency — Work that rises with purpose." />
-  <meta name="twitter:description" content="Books, music, and visual storytelling rooted in healing, intention, and soul-led growth." />
+  <meta name="twitter:title" content="Rising Creative Agency | Heal. Reset. Rise." />
+  <meta name="twitter:description" content="Start your free 7-day reset, then go deeper with guided books, music, and reflection experiences." />
   <meta name="twitter:image" content="https://risingcreativeagency.com/assets/social-share.jpg" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
@@ -37,7 +36,7 @@
     "name": "Rising Creative Agency",
     "url": "https://risingcreativeagency.com/",
     "logo": "https://risingcreativeagency.com/assets/rising-creative-agency-v3-emblem-512x512.png",
-    "description": "Books, music, and visual storytelling rooted in healing, intention, and soul-led growth.",
+    "description": "Guided books, music, and reflection experiences rooted in healing, intention, and soul-led growth.",
     "sameAs": [
       "https://www.instagram.com/risingcreativeagency/",
       "https://www.pinterest.com/rising_creative_agency/"
@@ -47,8 +46,583 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #081225;
+      --bg-soft: #0d1a31;
+      --bg-card: rgba(16, 31, 57, 0.9);
+      --line: rgba(141, 169, 214, 0.18);
+      --text: #ebf0ff;
+      --muted: #b8c3df;
+      --accent: #39cae7;
+      --accent-2: #8fe7f4;
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(57, 202, 231, 0.14), transparent 32%),
+        linear-gradient(180deg, #071122 0%, #081225 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(8, 18, 37, 0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .brand-mark { width: 24px; height: 24px; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      font-size: 14px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible {
+      color: var(--text);
+      background: rgba(255,255,255,0.05);
+      outline: none;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: linear-gradient(180deg, var(--accent) 0%, #29b8d5 100%);
+      color: #05212a;
+      font-weight: 800;
+      font-size: 15px;
+      box-shadow: 0 10px 30px rgba(57, 202, 231, 0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 35px rgba(57, 202, 231, 0.28);
+      outline: none;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border-color: rgba(255,255,255,0.12);
+      box-shadow: none;
+    }
+
+    .btn-ghost:hover,
+    .btn-ghost:focus-visible {
+      background: rgba(255,255,255,0.04);
+      box-shadow: none;
+    }
+
+    .btn-small {
+      min-height: 40px;
+      padding: 0 16px;
+      font-size: 14px;
+    }
+
+    main { overflow: hidden; }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 18px;
+      color: var(--accent-2);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: rgba(143, 231, 244, 0.8);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.08;
+    }
+
+    h1, .display {
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: -0.02em;
+    }
+
+    h1 { font-size: clamp(3rem, 7vw, 5.3rem); }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); }
+    h3 { font-size: 1.2rem; }
+
+    p { margin: 0; color: var(--muted); }
+
+    .lead,
+    .section-lead {
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
+      max-width: 720px;
+      color: #d9e3fb;
+    }
+
+    .hero {
+      padding: 56px 0 44px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      padding: 20px 0;
+    }
+
+    .hero-copy h1 {
+      max-width: 11ch;
+      margin-bottom: 18px;
+    }
+
+    .hero-copy .lead { margin-bottom: 22px; }
+
+    .micro-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 24px 0 28px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .micro-proof li {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      color: #dce6ff;
+      font-size: 14px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .hero-note {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.09);
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -10% -30% auto;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(57,202,231,0.28), transparent 68%);
+      pointer-events: none;
+    }
+
+    .offer-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(8, 18, 37, 0.84);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #e8f1ff;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero-cover {
+      border-radius: 20px;
+      aspect-ratio: 4 / 4.6;
+      object-fit: cover;
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .hero-card-body {
+      padding: 20px 6px 4px;
+    }
+
+    .hero-card-body h2 {
+      font-size: clamp(1.6rem, 3vw, 2.25rem);
+      margin-bottom: 10px;
+    }
+
+    .hero-card-body p { margin-bottom: 18px; }
+
+    .bullet-list {
+      margin: 0 0 22px;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .bullet-list li {
+      display: flex;
+      gap: 10px;
+      color: #dce6ff;
+      font-size: 15px;
+    }
+
+    .bullet-list li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: 900;
+      flex: none;
+    }
+
+    .split-card {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.025));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .mini-panel {
+      background: rgba(7, 17, 34, 0.64);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .mini-panel h3 { margin-bottom: 8px; }
+    .mini-panel p { margin-bottom: 14px; font-size: 15px; }
+
+    .section-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .cards-3,
+    .cards-4,
+    .catalog-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cards-4, .catalog-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .feature-card,
+    .media-card,
+    .stat-card,
+    .story-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .feature-card,
+    .stat-card,
+    .story-card {
+      padding: 24px;
+    }
+
+    .feature-card h3,
+    .story-card h3 { margin-bottom: 8px; }
+
+    .feature-card p,
+    .story-card p { font-size: 15px; }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .story-card.large {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .story-card.large img {
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      object-fit: cover;
+    }
+
+    .story-card-body {
+      padding: 28px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 26px;
+      align-items: center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .product-cover {
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .product-copy h2 {
+      margin-bottom: 12px;
+    }
+
+    .product-copy > p {
+      margin-bottom: 16px;
+      font-size: 1.02rem;
+      color: #dfe8ff;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0 24px;
+    }
+
+    .tag {
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(255,255,255,0.04);
+      color: #dce6ff;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .stack { display: grid; gap: 16px; }
+
+    .series-group + .series-group { margin-top: 30px; }
+
+    .series-heading {
+      margin: 0 0 16px;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+    }
+
+    .media-card {
+      overflow: hidden;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .series-badge {
+      display: inline-flex;
+      align-self: flex-start;
+      margin-bottom: 12px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(57,202,231,0.14);
+      border: 1px solid rgba(57,202,231,0.22);
+      color: var(--accent-2);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .cover {
+      width: 100%;
+      aspect-ratio: 0.86;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 14px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .media-card h3 { margin-bottom: 8px; }
+
+    .media-card p {
+      margin-bottom: 16px;
+      font-size: 14px;
+      color: var(--muted);
+      flex: 1;
+    }
+
+    .button-row {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn-block { width: 100%; }
+
+    .quote-band {
+      padding: 34px 28px;
+      text-align: center;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      box-shadow: var(--shadow);
+    }
+
+    .quote-band p {
+      color: #eff4ff;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.15;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 28px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box p + p { margin-top: 8px; }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .contact-email {
+      color: var(--accent-2);
+      font-weight: 700;
+    }
+
+    .site-footer {
+      padding: 24px 0 42px;
+      color: #94a8d0;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .product-grid,
+      .story-grid,
+      .contact-box,
+      .split-card {
+        grid-template-columns: 1fr;
+      }
+      .cards-4,
+      .catalog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .cards-3 { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      .section { padding: 56px 0; }
+      .nav { align-items: flex-start; }
+      .nav-links { justify-content: flex-end; }
+      .hero { padding-top: 32px; }
+      .hero-actions,
+      .social-links,
+      .section-head { align-items: stretch; }
+      .hero-actions .btn,
+      .section-head .btn,
+      .social-links .btn { width: 100%; }
+      .cards-4,
+      .catalog-grid { grid-template-columns: 1fr; }
+      .contact-box { padding: 22px; }
+      .hero-card,
+      .product-grid { padding: 20px; }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -57,331 +631,287 @@
         <img src="assets/rising-creative-agency-mark.svg" alt="Rising Creative Agency mark" class="brand-mark" />
         <span>Rising Creative Agency</span>
       </a>
-      <a class="btn btn-small" href="#contact">Contact</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="#start">Start Here</a>
+        <a class="nav-link" href="#deeper">Go Deeper</a>
+        <a class="nav-link" href="#books">Books</a>
+        <a class="nav-link" href="#music">Music</a>
+        <a class="btn btn-small" href="https://risingcreativeagency.gumroad.com/l/7DaystoReset" target="_blank" rel="noopener noreferrer">Free 7-Day Reset</a>
+      </nav>
     </div>
   </header>
 
   <main id="top">
-    <section class="hero container">
-      <p class="eyebrow">Independent Creative Agency</p>
-      <h1>Work that rises with purpose.</h1>
-      <p class="lead">Books, music, and visual art for healing, purpose, and soul-led growth.</p>
-      <div class="cta-row">
-        <a class="btn" href="#books">Explore Releases</a>
-        <a class="btn btn-ghost" href="#about">About the Studio</a>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Guided Books, Music, and Reflection</p>
+          <h1>Heal. Reset. Rise.</h1>
+          <p class="lead">Start with a free 7-day reset designed to help you reconnect, find clarity, and move forward. Then go deeper with guided experiences, books, and music rooted in healing and intention.</p>
+          <ul class="micro-proof" aria-label="Highlights">
+            <li>Free 7-day guided reset</li>
+            <li>30-day paid experience</li>
+            <li>Books, music, and reflective tools</li>
+          </ul>
+          <div class="hero-actions">
+            <a class="btn" href="https://risingcreativeagency.gumroad.com/l/7DaystoReset" target="_blank" rel="noopener noreferrer">Start the 7-Day Reset</a>
+            <a class="btn btn-ghost" href="#deeper">Explore the Full Experience</a>
+          </div>
+          <p class="hero-note">If you have been feeling overwhelmed, stuck, or unsure what is next, this is a gentle place to begin again.</p>
+        </div>
+
+        <aside class="hero-card" aria-label="Free guide preview">
+          <span class="offer-badge">Free guide · 7 days</span>
+          <img src="assets/thumb-7-Days-to-Reset-Your-Heart.jpg" alt="7 Days to Reset Your Heart guide cover" class="hero-cover" />
+          <div class="hero-card-body">
+            <h2>Start here</h2>
+            <p>A gentle guide to reconnect, realign, and begin again with short daily reflections you can move through in just a few minutes.</p>
+            <ul class="bullet-list">
+              <li>Daily reflections and affirmations</li>
+              <li>Simple, calming structure</li>
+              <li>A direct path into the 30-day reset</li>
+            </ul>
+            <a class="btn btn-block" href="https://risingcreativeagency.gumroad.com/l/7DaystoReset" target="_blank" rel="noopener noreferrer">Get the Free Guide</a>
+          </div>
+        </aside>
       </div>
     </section>
 
-
-<section class="cta-banner">
-  <div class="cta-banner-inner">
-    <img src="assets/cover-7-Days-to-Reset-Your-Heart.jpg" alt="7 Days to Reset Your Heart" class="cta-bg" />
-    <div class="cta-overlay">
-      <h2>Heal. Reset. Rise.</h2>
-      <a class="btn cta-primary" href="https://risingcreativeagency.gumroad.com/l/7DaystoReset" target="_blank" rel="noopener noreferrer">
-        👉 Start the 7-Day Reset (Free)
-      </a>
-    </div>
-  </div>
-</section>
-
-
-    <section id="about" class="section container">
-      <h2>About Rising Creative Agency</h2>
-      <p>
-        Rising Creative Agency is an independent creative agency creating books, music, and visual storytelling rooted in healing,
-        intention, and spiritual growth. We shape meaningful work with editorial clarity, creative excellence, and heart-centered direction.
-      </p>
+    <section id="start" class="section">
+      <div class="container split-card">
+        <article class="mini-panel">
+          <p class="eyebrow">Step 1</p>
+          <h3>Begin with the free reset</h3>
+          <p>Take seven days to slow down, breathe, and reconnect with yourself through guided reflection. This is your easiest entry point.</p>
+          <a class="btn btn-block" href="https://risingcreativeagency.gumroad.com/l/7DaystoReset" target="_blank" rel="noopener noreferrer">Start Free</a>
+        </article>
+        <article class="mini-panel">
+          <p class="eyebrow">Step 2</p>
+          <h3>Continue with the 30-day experience</h3>
+          <p>When you are ready to go deeper, the paid reset helps you build momentum with longer structure, more content, and a fuller emotional journey.</p>
+          <a class="btn btn-ghost btn-block" href="https://risingcreativeagency.gumroad.com/l/Rise-Shine" target="_blank" rel="noopener noreferrer">See the 30-Day Reset</a>
+        </article>
+      </div>
     </section>
 
-    <section id="pillars" class="section container grid-3">
-      <article class="card">
-        <h3>Books</h3>
-        <p>Thoughtful writing and guided tools for reflection, growth, and practical momentum.</p>
-      </article>
-      <article class="card">
-        <h3>Music</h3>
-        <p>Atmospheric, story-driven releases crafted to carry emotional weight and clarity.</p>
-      </article>
-      <article class="card">
-        <h3>Visual Art</h3>
-        <p>Original visual pieces and design-led explorations rooted in modern symbolism.</p>
-      </article>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Why People Start Here</p>
+            <h2>A softer way forward</h2>
+          </div>
+        </div>
+        <div class="cards-3">
+          <article class="feature-card">
+            <h3>Clear first step</h3>
+            <p>No browsing required. Start with one guided action and let the rest of the journey unfold naturally.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Emotionally aligned</h3>
+            <p>Books, music, and reflection all support the same outcome: more peace, more clarity, and a gentler path ahead.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Built to go deeper</h3>
+            <p>The free guide is the doorway. The 30-day reset, books, and music give people meaningful ways to continue.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section id="books" class="section container">
-      <p class="eyebrow">Books</p>
-      <h2>Published Titles & Series</h2>
+    <section id="deeper" class="section">
+      <div class="container product-grid">
+        <div class="product-cover">
+          <img src="assets/book-rise-brighter.jpg" alt="Rise and Shine 30-Day Inner Reset Experience cover" />
+        </div>
+        <div class="product-copy">
+          <p class="eyebrow">The Paid Experience</p>
+          <h2>Go deeper with the 30-Day Inner Reset Experience</h2>
+          <p>Designed for people who want more than inspiration alone, this guided experience layers reflection, journaling, symbolism, and emotional rhythm into a fuller path forward.</p>
+          <div class="tag-row" aria-label="Included in the experience">
+            <span class="tag">$19 digital experience</span>
+            <span class="tag">30 guided days</span>
+            <span class="tag">Built from books and reflections</span>
+          </div>
+          <ul class="bullet-list">
+            <li>30-day emotional reset structure</li>
+            <li>Guided reflections for healing and growth</li>
+            <li>A natural next step after the free guide</li>
+          </ul>
+          <div class="hero-actions">
+            <a class="btn" href="https://risingcreativeagency.gumroad.com/l/Rise-Shine" target="_blank" rel="noopener noreferrer">Get the 30-Day Experience</a>
+            <a class="btn btn-ghost" href="#books">Browse Books</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <div class="series-group">
-        <h3 class="series-heading">Rise &amp; Shine Journey</h3>
+    <section class="section">
+      <div class="container story-grid">
+        <article class="story-card large">
+          <img src="assets/music-fly-in-your-sky.jpg" alt="Fly In Your Sky cover art" />
+        </article>
+        <article class="story-card">
+          <p class="eyebrow">Music That Supports the Reset</p>
+          <h3>Let the music carry the feeling further</h3>
+          <p>These songs are not just releases. They are extensions of the same healing, reflection, and emotional movement that shape the guides and books.</p>
+          <div class="stack">
+            <div>
+              <h3>Start with music that matches the journey</h3>
+              <p><strong>Fly In Your Sky</strong>, <strong>By Name</strong>, and <strong>You Don't Have to Fly</strong> naturally complement the free and paid reset experiences.</p>
+            </div>
+            <div class="hero-actions">
+              <a class="btn btn-ghost" href="#music">Explore Music</a>
+              <a class="btn" href="https://risingcreativeagency.gumroad.com/l/7DaystoReset" target="_blank" rel="noopener noreferrer">Begin the Reset</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="books" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Books</p>
+            <h2>Books that support the deeper journey</h2>
+            <p class="section-lead">The books now support the funnel instead of competing with it. Start with the free guide, then use these when you want to go deeper into reflection, symbolism, and healing.</p>
+          </div>
+          <a class="btn btn-ghost" href="https://risingcreativeagency.gumroad.com/l/7DaystoReset" target="_blank" rel="noopener noreferrer">Start Free First</a>
+        </div>
+
+        <div class="series-group">
+          <h3 class="series-heading">Start with the Rise &amp; Shine Journey</h3>
+          <div class="catalog-grid">
+            <article class="media-card">
+              <span class="series-badge">Rise &amp; Shine Journey</span>
+              <img src="assets/book-shine-cover.jpg" alt="SHINE book cover" class="cover" />
+              <h3>SHINE</h3>
+              <p>Reflections on healing, wholeness, and manifesting with heart.</p>
+              <div class="button-row">
+                <a class="btn btn-block" href="https://risingcreativeagency.gumroad.com/l/7DaystoReset" target="_blank" rel="noopener noreferrer">Start Your Journey</a>
+                <a class="btn btn-ghost btn-block" href="books/shine.html">View Details</a>
+                <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/SHINE-Reflections-Healing-Wholeness-Manifesting/dp/B0GQ9JYLCN/">View on Amazon</a>
+              </div>
+            </article>
+            <article class="media-card">
+              <span class="series-badge">Rise &amp; Shine Journey</span>
+              <img src="assets/book-rise-brighter.jpg" alt="RISE book cover" class="cover" />
+              <h3>RISE</h3>
+              <p>A journal for intentional, heart-led growth and deeper reflection.</p>
+              <div class="button-row">
+                <a class="btn btn-block" href="https://risingcreativeagency.gumroad.com/l/Rise-Shine" target="_blank" rel="noopener noreferrer">Go Deeper</a>
+                <a class="btn btn-ghost btn-block" href="books/rise.html">View Details</a>
+                <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/Rise-Brighter-Manifesting-Heart-Journal/dp/B0GBK5C3Q8/">View on Amazon</a>
+              </div>
+            </article>
+            <article class="media-card">
+              <span class="series-badge">Sacred Guide</span>
+              <img src="assets/book-the-shepherd-who-calls-you-by-name.jpg" alt="The Shepherd Who Calls You by Name book cover" class="cover" />
+              <h3>The Shepherd Who Calls You by Name</h3>
+              <p>A quiet, contemplative story of wandering, being found, and learning to rest again.</p>
+              <div class="button-row">
+                <a class="btn btn-block" href="https://risingcreativeagency.gumroad.com/l/7DaystoReset" target="_blank" rel="noopener noreferrer">Begin with the Free Reset</a>
+                <a class="btn btn-ghost btn-block" href="books/the-shepherd-who-calls-you-by-name.html">View Details</a>
+                <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/dp/B0GVNRXTBT">View on Amazon</a>
+              </div>
+            </article>
+            <article class="media-card">
+              <span class="series-badge">Coming Soon</span>
+              <img src="assets/book-the-weeping-willow.jpg" alt="The Weeping Willow book cover" class="cover" />
+              <h3>The Weeping Willow</h3>
+              <p>A reflective illustrated parable about sorrow, stillness, and a quiet place to rest.</p>
+              <div class="button-row">
+                <a class="btn btn-block" href="https://risingcreativeagency.gumroad.com/l/7DaystoReset" target="_blank" rel="noopener noreferrer">Start with the Free Reset</a>
+                <a class="btn btn-ghost btn-block" href="books/the-weeping-willow.html">View Details</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="music" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Music</p>
+            <h2>Music that meets people where they are</h2>
+            <p class="section-lead">Use the music as another doorway in. Then guide people back to the free reset or the full 30-day experience.</p>
+          </div>
+          <a class="btn btn-ghost" href="https://risingcreativeagency.gumroad.com/l/7DaystoReset" target="_blank" rel="noopener noreferrer">Start the Free Reset</a>
+        </div>
+
         <div class="catalog-grid">
           <article class="media-card">
-            <span class="series-badge">Rise &amp; Shine Journey</span>
-            <img src="assets/book-shine-cover.jpg" alt="SHINE book cover" class="cover" />
-            <h3>SHINE</h3>
-            <p>Book 1 in the Rise & Shine journey — reflections on healing, wholeness, and manifesting with heart.</p>
+            <span class="series-badge">Featured Single</span>
+            <img src="assets/music-fly-in-your-sky.jpg" alt="Fly In Your Sky cover art" class="cover" />
+            <h3>Fly In Your Sky</h3>
+            <p>A luminous, airy single about release, trust, and letting love move freely.</p>
             <div class="button-row">
-              <a class="btn btn-block" href="books/shine.html">View Details</a>
-              <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/SHINE-Reflections-Healing-Wholeness-Manifesting/dp/B0GQ9JYLCN/">View on Amazon</a>
+              <a class="btn btn-block" target="_blank" rel="noopener noreferrer" href="https://music.apple.com/us/album/fly-in-your-sky-single/1890783794">Apple Music</a>
+              <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/album/7FmZnhKcCvQvsh75xtc1GG?si=tetWV1I9SKSe5LTdJGIBRQ">Spotify</a>
+              <a class="btn btn-ghost btn-block" href="https://risingcreativeagency.gumroad.com/l/7DaystoReset" target="_blank" rel="noopener noreferrer">Pair With the Free Reset</a>
             </div>
           </article>
           <article class="media-card">
-            <span class="series-badge">Rise &amp; Shine Journey</span>
-            <img src="assets/book-rise-brighter.jpg" alt="RISE book cover" class="cover" />
-            <h3>RISE</h3>
-            <p>Companion title in the Rise & Shine journey — a journal for intentional, heart-led growth.</p>
+            <span class="series-badge">Featured Single</span>
+            <img src="assets/music-by-name.jpg" alt="By Name cover art" class="cover" />
+            <h3>By Name</h3>
+            <p>A tender, reflective single rooted in identity, grace, and being fully known.</p>
             <div class="button-row">
-              <a class="btn btn-block" href="books/rise.html">View Details</a>
-              <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/Rise-Brighter-Manifesting-Heart-Journal/dp/B0GBK5C3Q8/">View on Amazon</a>
+              <a class="btn btn-block" target="_blank" rel="noopener noreferrer" href="https://music.apple.com/us/album/by-name-single/1890372718">Apple Music</a>
+              <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/album/2edlAmhrEEjJyUkqYnkkkP?si=6_6648CKTACwComwkpVFGw">Spotify</a>
+              <a class="btn btn-ghost btn-block" href="https://risingcreativeagency.gumroad.com/l/Rise-Shine" target="_blank" rel="noopener noreferrer">Go Deeper With 30 Days</a>
+            </div>
+          </article>
+          <article class="media-card">
+            <span class="series-badge">Featured Single</span>
+            <img src="assets/music-you-dont-have-to-fly.jpg" alt="You Don't Have to Fly cover art" class="cover" />
+            <h3>You Don't Have to Fly</h3>
+            <p>A calming single about rest, safety, and the freedom of staying grounded.</p>
+            <div class="button-row">
+              <a class="btn btn-block" target="_blank" rel="noopener noreferrer" href="https://music.apple.com/us/album/you-dont-have-to-fly-single/1890214238">Apple Music</a>
+              <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/album/1Qdx3HpRD664SJkrJSe0Ia?si=QQ3EEsX9RWm8Pio9iokvFA">Spotify</a>
+              <a class="btn btn-ghost btn-block" href="https://risingcreativeagency.gumroad.com/l/7DaystoReset" target="_blank" rel="noopener noreferrer">Start with the Free Reset</a>
+            </div>
+          </article>
+          <article class="media-card">
+            <span class="series-badge">More Music</span>
+            <img src="assets/music-held-by-you.jpg" alt="Held By You cover art" class="cover" />
+            <h3>Held By You</h3>
+            <p>A grounded single about comfort, endurance, and being carried by love.</p>
+            <div class="button-row">
+              <a class="btn btn-block" target="_blank" rel="noopener noreferrer" href="https://music.apple.com/us/album/held-by-you-single/1888075758">Apple Music</a>
+              <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/album/7vBy8YIKr8Hag209xAelSH?si=CRG1eK7VTBy21tp4G1QJhw">Spotify</a>
+              <a class="btn btn-ghost btn-block" href="https://risingcreativeagency.gumroad.com/l/7DaystoReset" target="_blank" rel="noopener noreferrer">Begin the Reset</a>
             </div>
           </article>
         </div>
       </div>
-
-      <div class="series-group">
-        <h3 class="series-heading">Sacred Guide Series</h3>
-        <div class="catalog-grid">
-          <article class="media-card">
-            <span class="series-badge">Sacred Guide Core</span>
-            <img src="assets/book-sacred-communication.jpg" alt="Sacred Communication book cover" class="cover" />
-            <h3>Sacred Communication</h3>
-            <p>Core title in the Sacred Guide series — presence, blessing, and surrender in conscious relationship.</p>
-            <div class="button-row">
-              <a class="btn btn-block" href="books/sacred-communication.html">View Details</a>
-              <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/Sacred-Communication-Presence-Blessing-Surrender-ebook/dp/B0GGMLJV66/">View on Amazon</a>
-            </div>
-          </article>
-          <article class="media-card">
-            <span class="series-badge">Sacred Guide Parable</span>
-            <img src="assets/book-warrior-wounded-dove.jpg" alt="The Warrior and The Wounded Dove book cover" class="cover" />
-            <h3>The Warrior and The Wounded Dove</h3>
-            <p>A Sacred Guide parable — surrender, strength, and transformation.</p>
-            <div class="button-row">
-              <a class="btn btn-block" href="books/the-warrior-and-the-wounded-dove.html">View Details</a>
-              <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/Warrior-Wounded-Dove-Parable-Surrender-ebook/dp/B0G8TTMGJJ/">View on Amazon</a>
-            </div>
-          </article>
-          <article class="media-card">
-            <span class="series-badge">Sacred Guide Parable</span>
-            <img src="assets/book-the-shepherd-who-names-you.jpg" alt="The Shepherd Who Names You book cover" class="cover" />
-            <h3>The Shepherd Who Names You</h3>
-            <p>A Sacred Guide parable — a story of still waters and sacred identity.</p>
-            <div class="button-row">
-              <a class="btn btn-block" href="books/the-shepherd-who-names-you.html">View Details</a>
-              <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/dp/B0GR9XQXPX">View on Amazon</a>
-            </div>
-          </article>
-          <article class="media-card">
-            <span class="series-badge">Illustrated Parable</span>
-            <img src="assets/book-the-gardener-of-the-garden.jpg" alt="The Gardener of The Garden book cover" class="cover" />
-            <h3>The Gardener of The Garden</h3>
-            <p>A peaceful illustrated parable about growth, trust, timing, and becoming.</p>
-            <div class="button-row">
-              <a class="btn btn-block" href="books/the-gardener-of-the-garden.html">View Details</a>
-              <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/dp/B0GWD49MH9">View on Amazon</a>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <div class="series-group">
-        <h3 class="series-heading">Featured Books</h3>
-        <div class="catalog-grid featured-books-row">
-          <article class="media-card">
-            <span class="series-badge">Sacred Communication</span>
-            <img src="assets/book-house-the-architect-restored.jpg" alt="The House the Architect Restored book cover" class="cover" />
-            <h3>The House the Architect Restored</h3>
-            <p>A contemplative illustrated parable about restoration, healing, and the quiet courage to rebuild what once felt broken.</p>
-            <div class="button-row">
-              <a class="btn btn-block" href="books/the-house-the-architect-restored.html">View Details</a>
-              <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/dp/B0GVXXHJ4P">View on Amazon</a>
-            </div>
-          </article>
-
-          <article class="media-card">
-            <span class="series-badge">Sacred Communication</span>
-            <img src="assets/book-the-dove-the-warrior-and-the-healer.jpg" alt="The Dove, the Warrior, and the Healer book cover" class="cover" />
-            <h3>The Dove, the Warrior, and the Healer</h3>
-            <p>A reflective illustrated parable of grace, surrender, healing, and the courage to trust restoration.</p>
-            <div class="button-row">
-              <a class="btn btn-block" href="books/the-dove-the-warrior-and-the-healer.html">View Details</a>
-              <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/dp/B0GVSHFL6D">View on Amazon</a>
-            </div>
-          </article>
-
-          <article class="media-card">
-            <span class="series-badge">Sacred Spaces Series</span>
-            <img src="assets/book-the-shepherd-who-calls-you-by-name.jpg" alt="The Shepherd Who Calls You by Name book cover" class="cover" />
-            <h3>The Shepherd Who Calls You by Name</h3>
-            <p>A quiet, contemplative story of wandering, being found, and learning to rest again.</p>
-            <div class="button-row">
-              <a class="btn btn-block" href="books/the-shepherd-who-calls-you-by-name.html">View Details</a>
-              <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/dp/B0GVNRXTBT">View on Amazon</a>
-            </div>
-          </article>
-
-          <article class="media-card">
-            <span class="series-badge">Coming Soon</span>
-            <img src="assets/book-the-weeping-willow.jpg" alt="The Weeping Willow book cover" class="cover" />
-            <h3>The Weeping Willow</h3>
-            <p>A Quiet Place of Presence — a reflective illustrated parable about sorrow, stillness, and a quiet place to rest.</p>
-            <div class="button-row">
-              <a class="btn btn-block" href="books/the-weeping-willow.html">View Details</a>
-              <span class="btn btn-ghost btn-block btn-disabled" aria-disabled="true">Coming Soon</span>
-            </div>
-          </article>
-        </div>
-      </div>
-
     </section>
 
-        <!-- MUSIC SECTION:START -->
-    <section id="music" class="section container">
-          <p class="eyebrow">Music</p>
-          <h2>New Releases</h2>
-          <p class="lead section-lead">
-            Fresh releases from Jackson Murphy, now streaming on Apple Music and Spotify.
-          </p>
-          <div class="catalog-grid new-release-grid">
-            <article class="media-card featured-release">
-          <span class="series-badge">New Single</span>
-          <img src="assets/music-fly-in-your-sky.jpg" alt="Fly In Your Sky cover art" class="cover" />
-          <h3>Fly In Your Sky</h3>
-          <p>A luminous, airy single about release, trust, and letting love move freely.</p>
-          <div class="button-row">
-            <a class="btn btn-block" target="_blank" rel="noopener noreferrer" href="https://music.apple.com/us/album/fly-in-your-sky-single/1890783794">Apple Music</a>
-            <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/album/7FmZnhKcCvQvsh75xtc1GG?si=tetWV1I9SKSe5LTdJGIBRQ">Spotify</a>
-          </div>
-        </article>
-            <article class="media-card">
-          <span class="series-badge">New Single</span>
-          <img src="assets/music-by-name.jpg" alt="By Name cover art" class="cover" />
-          <h3>By Name</h3>
-          <p>A tender, reflective single rooted in identity, grace, and being fully known.</p>
-          <div class="button-row">
-            <a class="btn btn-block" target="_blank" rel="noopener noreferrer" href="https://music.apple.com/us/album/by-name-single/1890372718">Apple Music</a>
-            <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/album/2edlAmhrEEjJyUkqYnkkkP?si=6_6648CKTACwComwkpVFGw">Spotify</a>
-          </div>
-        </article>
-            <article class="media-card">
-          <span class="series-badge">New Single</span>
-          <img src="assets/music-a-million-times.jpg" alt="A Million Times cover art" class="cover" />
-          <h3>A Million Times</h3>
-          <p>An expansive, emotional single carried by memory, devotion, and longing.</p>
-          <div class="button-row">
-            <a class="btn btn-block" target="_blank" rel="noopener noreferrer" href="https://music.apple.com/us/album/a-million-times-single/1890351999">Apple Music</a>
-            <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/album/6Z9E1eptmh02gBRDtECFwl?si=3sP8yYSCRu2ZtOXWoBHmlQ">Spotify</a>
-          </div>
-        </article>
-            <article class="media-card">
-          <span class="series-badge">New Single</span>
-          <img src="assets/music-you-dont-have-to-fly.jpg" alt="You Don’t Have to Fly cover art" class="cover" />
-          <h3>You Don’t Have to Fly</h3>
-          <p>A calming single about rest, safety, and the freedom of staying grounded.</p>
-          <div class="button-row">
-            <a class="btn btn-block" target="_blank" rel="noopener noreferrer" href="https://music.apple.com/us/album/you-dont-have-to-fly-single/1890214238">Apple Music</a>
-            <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/album/1Qdx3HpRD664SJkrJSe0Ia?si=QQ3EEsX9RWm8Pio9iokvFA">Spotify</a>
-          </div>
-        </article>
-            <article class="media-card">
-          <span class="series-badge">New Single</span>
-          <img src="assets/music-under-the-weeping-willow.jpg" alt="Under The Weeping Willow cover art" class="cover" />
-          <h3>Under The Weeping Willow</h3>
-          <p>A quiet, immersive release shaped by grief, gentleness, and sheltering presence.</p>
-          <div class="button-row">
-            <a class="btn btn-block" target="_blank" rel="noopener noreferrer" href="https://music.apple.com/us/album/under-the-weeping-willow-single/1890147879">Apple Music</a>
-            <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/album/5a2Zpcw8kkUkEAYqm0PCyh?si=40_Mm6KNTIKuhdoVGU0x6A">Spotify</a>
-          </div>
-        </article>
-            <article class="media-card">
-          <span class="series-badge">New Single</span>
-          <img src="assets/music-youll-stay-v2.jpg" alt="You’ll Stay cover art" class="cover" />
-          <h3>You’ll Stay</h3>
-          <p>A spacious, reassuring single about steadiness, presence, and staying through the storm.</p>
-          <div class="button-row">
-            <a class="btn btn-block" target="_blank" rel="noopener noreferrer" href="https://music.apple.com/us/album/youll-stay-v2-single/1890114343">Apple Music</a>
-            <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/album/103Osb95VDZ07X9fwBevSO?si=-93eajYgSEOsXaCVCVjdUA">Spotify</a>
-          </div>
-        </article>
-            <article class="media-card">
-          <span class="series-badge">New Single</span>
-          <img src="assets/music-held-by-you.jpg" alt="Held By You cover art" class="cover" />
-          <h3>Held By You</h3>
-          <p>A grounded, storm-worn single about comfort, endurance, and being carried by love.</p>
-          <div class="button-row">
-            <a class="btn btn-block" target="_blank" rel="noopener noreferrer" href="https://music.apple.com/us/album/held-by-you-single/1888075758">Apple Music</a>
-            <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/album/7vBy8YIKr8Hag209xAelSH?si=CRG1eK7VTBy21tp4G1QJhw">Spotify</a>
-          </div>
-        </article>
-			  <article class="media-card">
-          <span class="series-badge">New Single</span>
-          <img src="assets/music-love-speaks-still.jpg" alt="Love Speaks Still cover art" class="cover" />
-          <h3>Love Speaks Still</h3>
-          <p>A radiant, heart-forward single about enduring love, warmth, and spiritual connection.</p>
-          <div class="button-row">
-            <a class="btn btn-block" target="_blank" rel="noopener noreferrer" href="https://music.apple.com/us/album/love-speaks-still-single/1866964923">Apple Music</a>
-            <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/album/4NJVd3V5kaOcLx8LnWq5xO?si=heoW1S2nR8OC6bO0ZuvjTQ">Spotify</a>
-          </div>
-        </article>
-          </div>
-
-          <div class="series-group">
-            <h3 class="series-heading">More Music</h3>
-            <div class="catalog-grid">
-              <article class="media-card">
-          <img src="assets/music-faith-1.jpg" alt="Faith 1 cover art" class="cover" />
-          <h3>Faith 1</h3>
-          <p>Earlier release from Jackson Murphy, available across major platforms.</p>
-          <div class="button-row">
-            <a class="btn btn-block" target="_blank" rel="noopener noreferrer" href="https://music.apple.com/us/artist/jackson-murphy/1792083952">Apple Music</a>
-            <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/artist/6kU8f5A21ItGvAr1OmvpvP">Spotify</a>
-          </div>
-        </article>
-              <article class="media-card">
-          <img src="assets/music-heal.jpg" alt="Heal cover art" class="cover" />
-          <h3>Heal (Love Still Holds)</h3>
-          <p>Atmospheric storytelling in song, still streaming across major platforms.</p>
-          <div class="button-row">
-            <a class="btn btn-block" target="_blank" rel="noopener noreferrer" href="https://music.apple.com/us/artist/jackson-murphy/1792083952">Apple Music</a>
-            <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/artist/6kU8f5A21ItGvAr1OmvpvP">Spotify</a>
-          </div>
-        </article>
-              <article class="media-card">
-          <img src="assets/music-shine.jpg" alt="Shine cover art" class="cover" />
-          <h3>Shine</h3>
-          <p>A heart-led release in the Rising Creative Agency catalog.</p>
-          <div class="button-row">
-            <a class="btn btn-block" target="_blank" rel="noopener noreferrer" href="https://music.apple.com/us/artist/jackson-murphy/1792083952">Apple Music</a>
-            <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/artist/6kU8f5A21ItGvAr1OmvpvP">Spotify</a>
-          </div>
-        </article>
-              <article class="media-card">
-          <img src="assets/music-rise.jpg" alt="RISE cover art" class="cover" />
-          <h3>RISE</h3>
-          <p>Part of the Rising Creative Agency sound catalog.</p>
-          <div class="button-row">
-            <a class="btn btn-block" target="_blank" rel="noopener noreferrer" href="https://music.apple.com/us/artist/jackson-murphy/1792083952">Apple Music</a>
-            <a class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/artist/6kU8f5A21ItGvAr1OmvpvP">Spotify</a>
-          </div>
-        </article>
-            </div>
-          </div>
-        </section>
-    <!-- MUSIC SECTION:END -->
-
-    <section class="section container quote">
-      <p>Create from spirit. Move with intention. Rise with purpose.</p>
+    <section class="section">
+      <div class="container quote-band">
+        <p>Create from spirit. Move with intention. Rise with purpose.</p>
+      </div>
     </section>
 
-    <section id="contact" class="section container contact">
-      <h2>Contact</h2>
-      <p>For collaborations, media, or partnerships:</p>
-      <p><a href="mailto:hello@risingcreativeagency.com">hello@risingcreativeagency.com</a></p>
-
-      <div class="social-links" aria-label="Social links">
-        <a class="btn btn-ghost" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/risingcreativeagency/">Instagram</a>
-        <a class="btn btn-ghost" target="_blank" rel="noopener noreferrer" href="https://www.pinterest.com/rising_creative_agency/">Pinterest</a>
+    <section id="contact" class="section">
+      <div class="container contact-box">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Collaborations, media, and partnerships</h2>
+          <p>If you want to connect about the work, features, or future collaborations, reach out here.</p>
+          <p><a class="contact-email" href="mailto:hello@risingcreativeagency.com">hello@risingcreativeagency.com</a></p>
+          <div class="social-links" aria-label="Social links">
+            <a class="btn btn-ghost" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/risingcreativeagency/">Instagram</a>
+            <a class="btn btn-ghost" target="_blank" rel="noopener noreferrer" href="https://www.pinterest.com/rising_creative_agency/">Pinterest</a>
+          </div>
+        </div>
+        <div>
+          <a class="btn btn-block" href="https://risingcreativeagency.gumroad.com/l/7DaystoReset" target="_blank" rel="noopener noreferrer">Start the Free 7-Day Reset</a>
+        </div>
       </div>
     </section>
   </main>
