@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <title>The Hearts — Jackson Murphy</title>
+  <style>
+    :root {
+      --bg: #081225;
+      --text: #ebf0ff;
+      --muted: #c0cde8;
+      --accent: #39cae7;
+      --line: rgba(141,169,214,0.14);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.6;
+    }
+    .container {
+      width: min(calc(100% - 40px), 920px);
+      margin: 0 auto;
+    }
+
+    /* OPENING */
+    .opening {
+      padding: 100px 0 60px;
+      text-align: center;
+    }
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+    .eyebrow::before, .eyebrow::after {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: rgba(57,202,231,0.4);
+    }
+    .opening h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      max-width: 22ch;
+      margin: 0 auto 28px;
+      color: #f0f4ff;
+    }
+    .opening p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 50ch;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+
+    /* PULL QUOTE */
+    .pull-quote {
+      padding: 16px 0 72px;
+    }
+    .pull-quote blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+      font-style: italic;
+      color: #d0dff8;
+      max-width: 52ch;
+      margin: 0 auto;
+      line-height: 1.45;
+      border-left: 2px solid rgba(57,202,231,0.4);
+      padding-left: 22px;
+      text-align: left;
+    }
+
+    /* ENTRIES */
+    .entry {
+      padding: 72px 0;
+      border-top: 1px solid var(--line);
+    }
+    .season-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .season-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .season-row::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    /* Two-column layout */
+    .entry-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .entry-grid.flip { direction: rtl; }
+    .entry-grid.flip > * { direction: ltr; }
+
+    /* Drawing */
+    .drawing-wrap { position: relative; }
+    .drawing-img {
+      width: 100%;
+      max-width: 380px;
+      display: block;
+      border-radius: 3px;
+      filter: brightness(0.97) contrast(1.04);
+    }
+    .entry-grid.flip .drawing-img { margin-left: auto; }
+
+    /* Copy */
+    .entry-season-tag {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .entry-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+      font-weight: 600;
+      line-height: 1.12;
+      letter-spacing: -0.015em;
+      color: #f0f4ff;
+      margin-bottom: 22px;
+    }
+    .entry-body {
+      display: grid;
+      gap: 14px;
+    }
+    .entry-body p { color: var(--muted); font-size: 0.975rem; line-height: 1.8; }
+    .entry-body em { font-style: italic; color: #d8e3f8; }
+    .entry-note {
+      font-style: italic;
+      font-size: 0.875rem;
+      color: rgba(184,195,223,0.65);
+      margin-top: 4px;
+    }
+
+    /* Full-width entry for roller coaster */
+    .entry-full .entry-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    /* CLOSING */
+    .closing {
+      padding: 100px 0 120px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+    .closing h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #f0f4ff;
+      max-width: 22ch;
+      margin: 0 auto 24px;
+      line-height: 1.12;
+    }
+    .closing p { color: var(--muted); max-width: 46ch; margin: 0 auto; }
+
+    @media (max-width: 700px) {
+      .entry-grid, .entry-grid.flip, .entry-full .entry-grid {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 36px;
+      }
+      .drawing-img { max-width: 300px; margin: 0 auto !important; }
+      .opening { padding: 64px 0 40px; }
+      .entry { padding: 52px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- OPENING -->
+<section class="opening">
+  <div class="container">
+    <p class="eyebrow">The Hearts</p>
+    <h1>I've been drawing hearts for years because I was trying to find my way back to my own.</h1>
+    <p>For a long time, the shape was enough. Now I'm ready to show you what's actually happening inside it.</p>
+  </div>
+</section>
+
+<section class="pull-quote">
+  <div class="container">
+    <blockquote>These aren't finished pieces. They're maps drawn in the middle of getting lost — and slowly, sometimes, finding the way.</blockquote>
+  </div>
+</section>
+
+<!-- 1. ARROWS HEART — Rejection, Heartbreak -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Rejection · Heartbreak · Loneliness</span></div>
+    <div class="entry-grid">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2591-arrows-heart.jpg" alt="Heart with arrows through it" class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">The heart that keeps taking hits</p>
+        <h2 class="entry-title">Three arrows. Because there were three things I couldn't fix at once.</h2>
+        <div class="entry-body">
+          <p>I drew this on whatever paper was nearby. There wasn't a plan. I just needed to get it out.</p>
+          <p>The arrows aren't going in. They're already there. That's an important distinction I didn't notice until later.</p>
+          <p class="entry-note">Still don't know exactly what it means. That might be the point.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. HIDING HEART — Wandering -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Wandering · Recklessness</span></div>
+    <div class="entry-grid flip">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2583-hiding-heart.jpg" alt="Heart hiding, barely visible" class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">The hiding heart</p>
+        <h2 class="entry-title">Sometimes the heart goes underground before you even notice it's gone.</h2>
+        <div class="entry-body">
+          <p>There's a room in this drawing. Life going on around a tiny, barely-visible heart in the foreground.</p>
+          <p>I've been in that room. Functional. Moving through the day. The heart quietly underneath everything, just surviving.</p>
+          <p class="entry-note">This one is easy to miss if you're not looking. Which was the whole problem.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. SLEEPING HEART — Loneliness, Longing -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Loneliness · Longing</span></div>
+    <div class="entry-grid">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2584-sleeping-heart.jpg" alt="Person in bed dreaming of a heart" class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">The sleeping heart</p>
+        <h2 class="entry-title">You dream about the thing you can't reach while you're awake.</h2>
+        <div class="entry-body">
+          <p>There's a figure in bed, a thought bubble, a heart inside it. The halo above the scene might be hope. Or just light. I'm not sure.</p>
+          <p>Some seasons the only place love feels safe is in the dream. That's honest. I wanted to draw it honestly.</p>
+          <p class="entry-note">The heart is still glowing even in the thought bubble. That stayed with me.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. QUICKSAND HEART — Stuck, Sinking -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Commitment · Addiction · Stuck</span></div>
+    <div class="entry-grid flip">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2588-quick-sand-heart.jpg" alt="Heart sinking into quicksand" class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">The quicksand heart</p>
+        <h2 class="entry-title">The harder you fight it, the faster it pulls you down.</h2>
+        <div class="entry-body">
+          <p>Half buried. The ground active around it — marks like something is still moving, still sinking.</p>
+          <p>There are seasons where every attempt to get free makes it worse. That's what addiction felt like. That's what this drawing is.</p>
+          <p class="entry-note">I drew this one fast. I think I knew what it was before the pencil stopped.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. SEESAW HEART — Uncertainty, Balance -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Uncertainty · Searching</span></div>
+    <div class="entry-grid">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2587-seesaw-heart.jpg" alt="Heart on one end of a seesaw" class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">The seesaw heart</p>
+        <h2 class="entry-title">One small heart, tipping the whole thing.</h2>
+        <div class="entry-body">
+          <p>The heart sits on the low end of the seesaw. Tilted. Off-balance. Whatever is on the other side is invisible — and that might be the truth of it.</p>
+          <p>You don't always know what's weighing against you. You just know the ground isn't level.</p>
+          <p class="entry-note">The pivot point is a circle. Something to turn around.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. PEEKING HEART — Starting to emerge -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Surviving · Beginning to Emerge</span></div>
+    <div class="entry-grid flip">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2585-peeking-heart.jpg" alt="Heart peeking around a corner" class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">The peeking heart</p>
+        <h2 class="entry-title">The first move back into the light is always tentative.</h2>
+        <div class="entry-body">
+          <p>A corner. A heart pressed against the wall, half visible, half hidden. The shadow behind it — whatever it came from — still present.</p>
+          <p>This is the moment before you decide to step out. When you don't know yet if it's safe. But something in you looks anyway.</p>
+          <p class="entry-note">The corner is sharp. The heart is soft. That tension is the whole thing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. MIRROR HEART — Forged, Armored -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Forging Through Fire · Armor</span></div>
+    <div class="entry-grid">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2586-mirror-heart.jpg" alt="Armored, riveted heart with a softer heart inside" class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">The mirror heart</p>
+        <h2 class="entry-title">The heart that had to put on armor just to keep going.</h2>
+        <div class="entry-body">
+          <p>Rivets around the outside. A studded border. Like something that has been through enough that it started reinforcing itself from the outside.</p>
+          <p>But inside the armor there's still a softer heart. That's the part the outside was built to protect. The armor wasn't wrong. It was just trying to keep something alive long enough to matter again.</p>
+          <p class="entry-note">Some seasons you harden. That's not failure. That's survival.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. HOPE HEART — Sobriety, Searching -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Sobriety · Searching · Hope</span></div>
+    <div class="entry-grid flip">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2582-hope-heart.jpg" alt="HOPE heart shaped balloon rising" class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">The hope heart</p>
+        <h2 class="entry-title">Hope. Written inside the thing still trying to rise.</h2>
+        <div class="entry-body">
+          <p>A balloon shaped like a heart, the word HOPE filling the whole shape. It wants to float. It's still tied to the ground by a long, tangled string.</p>
+          <p>At the bottom of the string there's a tiny heart. I didn't plan that. It was just where the pencil went.</p>
+          <p>That year, hope felt exactly like this — present, real, and still tethered to something heavy.</p>
+          <p class="entry-note">The string is the part that tells the truth.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. ROLLER COASTER HEART — The whole journey -->
+<section class="entry entry-full">
+  <div class="container">
+    <div class="season-row"><span class="season-label">The Whole Journey</span></div>
+    <div class="entry-grid">
+      <div class="entry-copy">
+        <p class="entry-season-tag">The roller coaster heart</p>
+        <h2 class="entry-title">The ride doesn't go in a straight line. It never did.</h2>
+        <div class="entry-body">
+          <p>A heart-shaped track. Words written along the rail — joy, love, gratitude, happiness, serenity, hope, pride, amusement, inspiration. A little train car at the top with a tiny heart on it.</p>
+          <p>The track loops back on itself. Which is honest. The seasons don't move in order. You revisit things. You pass through the same stations more than once.</p>
+          <p>But the train keeps moving. And the destination written at the center of the whole shape is <em>happiness</em> — not as an achievement, but as the thing at the center of the path.</p>
+          <p class="entry-note">This one took the longest to draw. I kept adding words to the track.</p>
+        </div>
+      </div>
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2589-roller-coaster-heart.jpg" alt="Heart shaped roller coaster track with words and a train car" class="drawing-img" style="max-width:100%;" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. HAPPINESS HEART — What it all flows toward -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Finding · Distilling</span></div>
+    <div class="entry-grid flip">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2590-happiness-heart.jpg" alt="A funnel of words flowing into a small heart below" class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">The happiness heart</p>
+        <h2 class="entry-title">Everything narrows. Down to one small point. Down to the heart.</h2>
+        <div class="entry-body">
+          <p>A wide top — words pouring in — determination, gratitude, joy, dreams, wonder. The shape narrows into a single point, and hanging from that point is one small heart.</p>
+          <p>All of it — everything you've been through, every word you've written, every prayer you've prayed — funneling down to something that fits in your chest.</p>
+          <p class="entry-note">I don't think happiness is the destination. I think it's what's left when you stop running from everything else.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. OPEN HEART — Love, Faith -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Love · Faith · Being Found</span></div>
+    <div class="entry-grid">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2581-open-heart.jpg" alt="A heart with an OPEN sign hanging from it" class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">The open heart</p>
+        <h2 class="entry-title">At some point you hang a sign on the thing you've been protecting.</h2>
+        <div class="entry-body">
+          <p>Simple. Almost too simple. A heart with a little "OPEN" sign hanging from it on two strings, like a shop door.</p>
+          <p>It surprised me when I drew it. An act of will, disguised as a small thing. After a long time of the door being shut.</p>
+          <p>I don't know exactly when that shifted. But I know it did. And I know this is what it looked like from the inside.</p>
+          <p class="entry-note">This one still gets me.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. NEW DAY HEART — Hope, Beginning Again -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">New Day · Hope · Beginning Again</span></div>
+    <div class="entry-grid flip">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2580-new-day-heart.jpg" alt="Heart on the horizon of a new day, sun rising, clouds" class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">The new day heart</p>
+        <h2 class="entry-title">The heart on the horizon. Sun up. Still here.</h2>
+        <div class="entry-body">
+          <p>A landscape. A horizon. A sun with rays cutting across the sky. Two clouds. And in the middle of it all, a small heart sitting on the ground in a pool of shadow — present, grounded, not floating away.</p>
+          <p>This is the drawing I come back to. Not because everything is fixed. But because the sun came up again and the heart is still there to see it.</p>
+          <p>That's what a new day looks like from inside the middle.</p>
+          <p class="entry-note">Nothing is wasted. Not even the days that were just about surviving to morning.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="container">
+    <h2>The heart is no longer the subject. It's the compass.</h2>
+    <p>These drawings mark the territory. Where I've been, what it cost, what it opened. If you recognize any of it — you're not alone in the middle.</p>
+  </div>
+</section>
+
+</body>
+</html>
