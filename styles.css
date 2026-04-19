@@ -977,3 +977,208 @@ p { margin: 0; color: var(--muted); }
     width: 100%;
   }
 }
+
+
+/* ===== RCA Rebrand — Tricia's Feedback (2026-04) ===== */
+
+/* Hero grid — copy left, image right */
+.rca-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.rca-hero-image-wrap {
+  position: relative;
+}
+
+.rca-hero-image {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 72px rgba(0, 0, 0, 0.4);
+  display: block;
+}
+
+@media (max-width: 860px) {
+  .rca-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rca-hero-image-wrap {
+    max-width: 540px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+/* Pull quote — now lives inside the hero */
+.rca-intro-quote {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.3rem, 2.8vw, 1.9rem);
+  color: var(--text);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  max-width: 34ch;
+  border-left: 2px solid rgba(143, 231, 244, 0.5);
+  padding-left: 22px;
+  margin-top: 36px;
+  margin-bottom: 0;
+}
+
+/* Divider inside story band between sections */
+.rca-story-divider {
+  width: 48px;
+  height: 1px;
+  background: rgba(143, 231, 244, 0.35);
+  margin: 32px 0;
+}
+
+/* About grid */
+.rca-about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.rca-about-text .lead {
+  margin-bottom: 0;
+}
+
+/* Seasons list */
+.rca-seasons-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  padding: 28px 28px 24px;
+}
+
+.rca-seasons {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 20px;
+}
+
+.rca-seasons p {
+  color: #d8e2fa;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.rca-seasons-note {
+  font-style: italic;
+  font-size: 15px;
+  color: var(--accent-2) !important;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 16px;
+  margin-top: 4px;
+}
+
+/* About page seasons */
+.rca-seasons-about {
+  margin: 24px 0;
+  padding: 24px 28px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+/* Story band — "Where It Began" */
+.rca-story-band {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  padding: 48px 52px;
+}
+
+.rca-story-inner {
+  max-width: 740px;
+}
+
+.rca-story-inner .lead {
+  margin-bottom: 0;
+}
+
+/* Closing quote — bigger, centered */
+.rca-closing-quote {
+  border-radius: 28px;
+  padding: 48px;
+  text-align: center;
+}
+
+.rca-closing-quote p {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  letter-spacing: -0.01em;
+  max-width: 22ch;
+  margin: 0 auto;
+}
+
+/* Contact bio block replacing CTA */
+.rca-contact-bio {
+  max-width: 320px;
+}
+
+.rca-contact-bio p {
+  color: #d8e2fa;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+/* About page bio grid */
+.rca-bio-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.rca-bio-main {
+  gap: 20px;
+}
+
+.rca-about-aside .platform-note {
+  padding: 26px 28px;
+  border-radius: 22px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .rca-about-grid,
+  .rca-bio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rca-story-band {
+    padding: 32px 28px;
+  }
+
+  .rca-intro-quote {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 720px) {
+  .rca-hero {
+    padding: 48px 0 40px;
+  }
+
+  .rca-closing-quote {
+    padding: 32px 24px;
+  }
+
+  .rca-story-band {
+    padding: 24px 20px;
+  }
+}
+
+/* Hero section padding + copy sizing (two-col version) */
+.rca-hero { padding: 64px 0 56px; }
+.rca-hero-copy { max-width: 600px; }
+.rca-hero-copy h1 { max-width: 16ch; margin-bottom: 24px; font-size: clamp(2.4rem, 5vw, 4rem); }
+.rca-hero-copy .lead { margin-bottom: 32px; }
+.rca-hero .btn { min-width: 160px; }
