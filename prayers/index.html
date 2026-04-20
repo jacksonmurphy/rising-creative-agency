@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <title>The Prayers — Jackson Murphy</title>
+  <meta name="description" content="Handwritten prayers and journal pages from Jackson Murphy. Raw, honest entries from the seasons when writing was the only thing that stayed." />
+  <style>
+    :root {
+      --bg: #081225;
+      --text: #ebf0ff;
+      --muted: #c0cde8;
+      --accent: #39cae7;
+      --line: rgba(141,169,214,0.14);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.6;
+    }
+    .container {
+      width: min(calc(100% - 40px), 920px);
+      margin: 0 auto;
+    }
+
+    /* OPENING */
+    .opening {
+      padding: 100px 0 60px;
+      text-align: center;
+    }
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+    .eyebrow::before, .eyebrow::after {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: rgba(57,202,231,0.4);
+    }
+    .opening h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      max-width: 22ch;
+      margin: 0 auto 28px;
+      color: #f0f4ff;
+    }
+    .opening p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 50ch;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+
+    /* PULL QUOTE */
+    .pull-quote {
+      padding: 16px 0 72px;
+    }
+    .pull-quote blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+      font-style: italic;
+      color: #d0dff8;
+      max-width: 52ch;
+      margin: 0 auto;
+      line-height: 1.45;
+      border-left: 2px solid rgba(57,202,231,0.4);
+      padding-left: 22px;
+      text-align: left;
+    }
+
+    /* ENTRIES */
+    .entry {
+      padding: 72px 0;
+      border-top: 1px solid var(--line);
+    }
+    .season-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .season-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .season-row::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    /* Two-column layout */
+    .entry-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .entry-grid.flip { direction: rtl; }
+    .entry-grid.flip > * { direction: ltr; }
+
+    /* Drawing */
+    .drawing-wrap { position: relative; }
+    .drawing-img {
+      width: 100%;
+      max-width: 380px;
+      display: block;
+      border-radius: 3px;
+      filter: brightness(0.97) contrast(1.04);
+    }
+    .entry-grid.flip .drawing-img { margin-left: auto; }
+
+    /* Copy */
+    .entry-season-tag {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .entry-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+      font-weight: 600;
+      line-height: 1.12;
+      letter-spacing: -0.015em;
+      color: #f0f4ff;
+      margin-bottom: 22px;
+    }
+    .entry-body {
+      display: grid;
+      gap: 14px;
+    }
+    .entry-body p { color: var(--muted); font-size: 0.975rem; line-height: 1.8; }
+    .entry-body em { font-style: italic; color: #d8e3f8; }
+    .entry-note {
+      font-style: italic;
+      font-size: 0.875rem;
+      color: rgba(184,195,223,0.65);
+      margin-top: 4px;
+    }
+
+    /* Full-width entry for featured prayer */
+    .entry-full .entry-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    /* Prayer transcription */
+    .prayer-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: #dfe8f8;
+      padding: 6px 0 8px 22px;
+      border-left: 2px solid rgba(57,202,231,0.28);
+      margin: 10px 0 14px;
+    }
+    .prayer-text p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #dfe8f8;
+    }
+    .prayer-text p + p { margin-top: 12px; }
+    .prayer-text em { color: #f0f4ff; }
+    .prayer-signoff {
+      display: inline-block;
+      margin-top: 6px;
+      font-style: italic;
+      font-size: 0.9rem;
+      color: rgba(184,195,223,0.78);
+      letter-spacing: 0.02em;
+    }
+
+    /* CLOSING */
+    .closing {
+      padding: 100px 0 120px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+    .closing h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #f0f4ff;
+      max-width: 22ch;
+      margin: 0 auto 24px;
+      line-height: 1.12;
+    }
+    .closing p { color: var(--muted); max-width: 46ch; margin: 0 auto; }
+
+    /* NAV */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(8,18,37,0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .brand-mark { width: 24px; height: 24px; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .nav-link {
+      font-size: 14px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 999px;
+      text-decoration: none;
+    }
+    .nav-link:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+    .btn-nav {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #39cae7 0%, #29b8d5 100%);
+      color: #05212a;
+      font-weight: 800;
+      font-size: 14px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(57,202,231,0.22);
+    }
+    .nav-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 46px; height: 46px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      cursor: pointer;
+    }
+    .nav-toggle-bar {
+      display: block;
+      width: 18px; height: 2px;
+      background: currentColor;
+      border-radius: 999px;
+      position: relative;
+    }
+    .nav-toggle-bar::before, .nav-toggle-bar::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 18px; height: 2px;
+      background: currentColor;
+      border-radius: 999px;
+    }
+    .nav-toggle-bar::before { top: -6px; }
+    .nav-toggle-bar::after { top: 6px; }
+
+    /* FOOTER */
+    .site-footer {
+      padding: 24px 0 42px;
+      color: #94a8d0;
+      font-size: 14px;
+      text-align: center;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 720px) {
+      .nav-toggle { display: inline-flex; margin-left: auto; }
+      .nav-links {
+        display: none;
+        width: 100%;
+        margin-top: 14px;
+        padding: 14px;
+        border-radius: 18px;
+        background: rgba(13,26,49,0.96);
+        border: 1px solid rgba(255,255,255,0.08);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+      .nav-links.is-open { display: flex; }
+      .nav-link { display: block; padding: 12px 14px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; }
+      .btn-nav { text-align: center; justify-content: center; }
+    }
+
+    @media (max-width: 700px) {
+      .entry-grid, .entry-grid.flip, .entry-full .entry-grid {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 36px;
+      }
+      .drawing-img { max-width: 300px; margin: 0 auto !important; }
+      .opening { padding: 64px 0 40px; }
+      .entry { padding: 52px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../index.html" aria-label="Rising Creative Agency home">
+      <img src="../assets/rising-creative-agency-mark.svg" alt="Rising Creative Agency mark" class="brand-mark" />
+      <span>RISING CREATIVE <span style="color:#7d8289;">AGENCY</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav class="nav-links" id="primary-nav" aria-label="Primary">
+      <a class="nav-link" href="../artists.html">Artists</a>
+      <a class="nav-link" href="../books.html">Books</a>
+      <a class="nav-link" href="../music.html">Music</a>
+      <a class="nav-link" href="../about-rca.html">About RCA</a>
+      <a class="btn-nav" href="../start-here.html">Start Here</a>
+    </nav>
+  </div>
+</header>
+
+<!-- OPENING -->
+<section class="opening">
+  <div class="container">
+    <p class="eyebrow">The Prayers</p>
+    <h1>I started writing these down because I didn't know what else to do.</h1>
+    <p>Some began as prayers. Some began as the rawest version of me &mdash; the nights I couldn't pretend anymore. Both are here.</p>
+  </div>
+</section>
+
+<section class="pull-quote">
+  <div class="container">
+    <blockquote>You can't pray until you've been honest. Some of these pages are the honesty. The rest are what grew out of it.</blockquote>
+  </div>
+</section>
+
+<!-- 1. CRUMBLE — raw, before prayer -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Before the Prayer · The Crumble</span></div>
+    <div class="entry-grid">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2593-crumble.jpg" alt="Handwritten journal entry: When your whole world crumbles" class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">Not a prayer yet</p>
+        <h2 class="entry-title">When your whole world crumbles, where do you go?</h2>
+        <div class="prayer-text">
+          <p>You didn't win tonight.</p>
+          <p>When your whole world crumbles and nothing else matters &mdash; what do you do? Where do you go?</p>
+        </div>
+        <div class="entry-body">
+          <p class="entry-note">Same line written twice, the second time in a shakier hand. Like the question was asking itself by then.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. DRUGS — raw, before prayer -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Addiction · The Reckoning</span></div>
+    <div class="entry-grid flip">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2594-drugs.jpg" alt="Handwritten: I did all the drugs." class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">Not a prayer yet</p>
+        <h2 class="entry-title">I did all the drugs.</h2>
+        <div class="prayer-text">
+          <p>I did all the drugs. You name them, I did them.</p>
+          <p>And I'll do them again.</p>
+          <p>I did all the <em>DRUGS!!!</em></p>
+        </div>
+        <div class="entry-body">
+          <p class="entry-note">Before I could pray, I had to tell the truth about where I was. This page was the truth.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. TIRED — raw, before prayer -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Exhaustion · Losing the Self</span></div>
+    <div class="entry-grid">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2595-tired.jpg" alt="Handwritten: Have you ever been so tired that you don't know who you are?" class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">Not a prayer yet</p>
+        <h2 class="entry-title">Have you ever been so tired that you don't know who you are?</h2>
+        <div class="prayer-text">
+          <p>Have you ever been so tired that you don't know what to do?</p>
+          <p>Have you ever been so tired that you don't know who you are?</p>
+        </div>
+        <div class="entry-body">
+          <p class="entry-note">When you're tired in a way sleep can't fix, the question changes shape.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. LOST PATH — first prayer -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">The First Prayer · Holding Still in the Storm</span></div>
+    <div class="entry-grid flip">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2592-lost-path.jpg" alt="Prayer: God, if I'm on a lost path, I pray for the strength to hold the right path." class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">The first prayer</p>
+        <h2 class="entry-title">God, if I'm on a lost path, I pray for the strength to hold the right path.</h2>
+        <div class="prayer-text">
+          <p>God, if I'm on a lost path, I pray for the strength to hold the right path.</p>
+          <p>Until then, I will hold still in the storm &mdash; trusting that I have been resurrected into the man who offers unconditional safety.</p>
+          <p>In Jesus' name, I pray.</p>
+          <p><span class="prayer-signoff">Amen.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. WITHDRAW — crying out -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">The Crying Out</span></div>
+    <div class="entry-grid">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2607-withdraw.jpg" alt="Prayer echoing Psalm 143:7: Do not withdraw Your presence from me." class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">The crying out</p>
+        <h2 class="entry-title">Do not withdraw Your presence from me.</h2>
+        <div class="prayer-text">
+          <p>Do not withdraw Your presence and favor from me, because if You do, I will be as good as dead.</p>
+          <p>My very life depends on Your presence. If You turn away from me, even for a moment, I will be spiritually and emotionally destroyed.</p>
+          <p>I will lose all hope and be no different from a dead person in the grave &mdash; powerless, forgotten, and separated from You.</p>
+          <p><em>"Do not hide Your face from me, or I will be like those who go down to the pit."</em></p>
+          <p><span class="prayer-signoff">&mdash; Psalm 143:7</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. DESIRES — surrender -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">The Surrender</span></div>
+    <div class="entry-grid flip">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2606-desires.jpg" alt="Prayer of surrender: Your will, not mine." class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">The surrender</p>
+        <h2 class="entry-title">Your will, not mine. Your timing, not mine. Your love, always.</h2>
+        <div class="prayer-text">
+          <p>Lord, I surrender my desires, my plans, and my path to You.</p>
+          <p>Lead me where You want me to go. Shape me into who You want me to become.</p>
+          <p>Your will, not mine. Your timing, not mine. Your love, always.</p>
+          <p><span class="prayer-signoff">Amen. &hearts;</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. HELP — honoring the heart without fear -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Honoring the Heart Without Fear</span></div>
+    <div class="entry-grid">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2611-help.jpg" alt="Prayer: Help me hear my heart without being ruled by fear." class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">Help</p>
+        <h2 class="entry-title">Help me hear my heart without being ruled by fear.</h2>
+        <div class="prayer-text">
+          <p>God, help me hear my heart without being ruled by fear.</p>
+          <p>Show me how to honor what is true in me without grasping for outcomes. Teach me the difference between patience and self-abandonment.</p>
+          <p>Give me the courage to stay present to love &mdash; and the wisdom to know when love asks to speak, not just wait.</p>
+          <p>If I am meant to remain here, strengthen me without hardening me. If I am meant to move, let it come from clarity, not pain.</p>
+          <p>Guide me step by step &mdash; not toward certainty, but toward integrity. And help me trust that honoring my heart will not destroy what is real.</p>
+          <p><span class="prayer-signoff">Amen. &mdash; jm</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. MAN — featured full-width -->
+<section class="entry entry-full">
+  <div class="container">
+    <div class="season-row"><span class="season-label">The Becoming · The Prayer for Who To Be</span></div>
+    <div class="entry-grid">
+      <div class="entry-copy">
+        <p class="entry-season-tag">The becoming</p>
+        <h2 class="entry-title">Make me into the man You created me to be.</h2>
+        <div class="prayer-text">
+          <p>Heavenly Father, make me into the man You created me to be.</p>
+          <p>Strengthen my heart, sharpen my mind, and steady my spirit. Give me the courage to rise each day with purpose, gratitude, and faith.</p>
+          <p>Guide me toward financial stability and bless the work of my hands. Let my creativity &mdash; my songs, my books, my art &mdash; find the audience You have prepared for them. Let these gifts provide for me, sustain me, and glorify You.</p>
+          <p>Keep my work flowing, my community growing, and my spirit grounded in service and love.</p>
+          <p>Help me care for my family with wisdom, compassion, and strength. Heal the grief, the loss, and the heartbreak I carry. Transform this pain into wisdom, this waiting into growth, and this longing into deeper surrender.</p>
+          <p>Prepare my heart for whatever love You have planned. Let me become the kind of man who can give and receive love with openness, humility, and truth.</p>
+          <p><span class="prayer-signoff">Amen.</span></p>
+        </div>
+      </div>
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2605-man.jpg" alt="Prayer: Heavenly Father, make me into the man You created me to be." class="drawing-img" style="max-width:100%;" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. TEACH — faith as resting -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Faith As Resting</span></div>
+    <div class="entry-grid flip">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2604-teach.jpg" alt="Prayer: Teach me that faith is not waiting for what I want, but resting in what You will." class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">Teach me</p>
+        <h2 class="entry-title">Faith is not waiting for what I want. It's resting in what You will.</h2>
+        <div class="prayer-text">
+          <p>Teach me that faith is not waiting for what I want, but resting in what You will.</p>
+          <p>Let Your perfect love lead us both to peace &mdash; in Your timing, by Your hands, for Your glory.</p>
+          <p><span class="prayer-signoff">Amen. &hearts;</span></p>
+          <p><em>"The God of all grace&hellip; will Himself restore, confirm, strengthen, and establish you."</em></p>
+          <p><span class="prayer-signoff">&mdash; 1 Peter 5:10</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. MORNING — love held in silence -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Love Held in Silence</span></div>
+    <div class="entry-grid">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2602-morning.jpg" alt="Morning Prayer for Holding Love in Silence" class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">A morning prayer</p>
+        <h2 class="entry-title">For holding love in silence.</h2>
+        <div class="prayer-text">
+          <p>Father, this morning my heart is heavy with love I cannot give and words I cannot send. But I place them all in Your hands &mdash; every thought, every ache, every longing.</p>
+          <p>Teach me that love isn't lost when it waits; it deepens. Help me remember that silence is not absence, but the sacred ground where You do Your quietest work.</p>
+          <p>When I feel the urge to reach out, remind me that You are already reaching &mdash; in ways I never could.</p>
+          <p>Let my restraint become a form of prayer. Let my patience become proof of trust. Let my peace speak louder than my words.</p>
+          <p>Remind me that love held in Your timing is never wasted &mdash; it's only being refined. Keep her safe in Your arms. Keep me steady in Your grace. And keep our hearts anchored in the promise that nothing surrendered in love is ever lost in You.</p>
+          <p><span class="prayer-signoff">Amen.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. FAITHFULLY — a quiet note -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">A Quiet Note</span></div>
+    <div class="entry-grid flip">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2603-faithfully.jpg" alt="Handwritten: My love is faithfully resting in the quiet corner of your heart." class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">A quiet note</p>
+        <h2 class="entry-title">My love is faithfully resting in the quiet corner of your heart.</h2>
+        <div class="prayer-text">
+          <p>My love is faithfully resting in the quiet corner of your heart.</p>
+          <p><em>"Love is patient, love is kind&hellip; it always protects, always trusts, always hopes, always perseveres."</em></p>
+          <p><span class="prayer-signoff">&mdash; 1 Corinthians 13:4, 7</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. STEADY — the steadiness -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">The Steadiness</span></div>
+    <div class="entry-grid">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2608-steady.jpg" alt="Prayer: Steady my spirit today." class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">Steady</p>
+        <h2 class="entry-title">Steady my spirit today.</h2>
+        <div class="prayer-text">
+          <p>Father, steady my spirit today. Quiet every fear and awaken every hope. Guide my steps with Your peace and my heart with Your love.</p>
+          <p>Let me feel Your nearness in every breath and every moment.</p>
+          <p>Make me ready for whatever You are unfolding next.</p>
+          <p><span class="prayer-signoff">Amen. &hearts;</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13. PEACE — tonight I choose peace -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Tonight, I Choose Peace</span></div>
+    <div class="entry-grid flip">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2609-peace.jpg" alt="Prayer: Tonight, I choose peace." class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">Peace</p>
+        <h2 class="entry-title">Tonight, I choose peace.</h2>
+        <div class="prayer-text">
+          <p>God, I am tired in places words don't reach. I've tried to be patient, faithful, understanding, strong &mdash; and tonight I admit I don't know what comes next.</p>
+          <p>So I release the need to figure it out. I release the need to be chosen, explained, or reassured. I release the fear that if I loosen my grip, I will lose everything.</p>
+          <p>If something is meant to stay, let it stay without my striving. If something is meant to go, let it go without breaking me.</p>
+          <p>Quiet my mind. Settle my body. Remind my heart that I am not forgotten, not behind, not unlovable, and not alone.</p>
+          <p>Give me peace that does not depend on outcomes. Rest that does not require answers. And trust that even here &mdash; especially here &mdash; You are holding me.</p>
+          <p>Tonight, I choose rest. Tonight, I choose surrender without self-abandonment. Tonight, I choose peace.</p>
+          <p><span class="prayer-signoff">Amen. &mdash; jm</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 14. ANSWERS — presence over answers -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Presence Over Answers</span></div>
+    <div class="entry-grid">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2610-answers.jpg" alt="Prayer: I don't need answers tonight. I ask only for presence." class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">Answers</p>
+        <h2 class="entry-title">I don't need answers tonight. I ask only for presence.</h2>
+        <div class="prayer-text">
+          <p>God, I am here. I don't need answers tonight. I don't need the future to resolve itself. I don't need love to prove anything to me. I ask only for presence.</p>
+          <p>Stay with me as I breathe. Stay with me as my heart softens. Stay with me when the ache rises and when the silence feels loud.</p>
+          <p>Teach me how to remain without tightening, without chasing, without abandoning myself.</p>
+          <p>If love is meant to grow, let it grow without force. If it is meant to rest, let it rest without fear.</p>
+          <p>Hold what I cannot hold. Guide what I cannot see. Calm what feels unsteady inside me.</p>
+          <p>I place my trust in You &mdash; not in outcomes, not in timing, not in control. Tonight, I choose to stay. With You. With myself. In peace.</p>
+          <p><span class="prayer-signoff">Amen. &hearts; jm</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 15. WORDS — the words I wanted to live inside -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">The Words I Wanted to Live Inside</span></div>
+    <div class="entry-grid flip">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2601-words.jpg" alt="Handwritten list of words: restoration, dedicated, atonement, consistency, gentleness, purpose..." class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">The words</p>
+        <h2 class="entry-title">A list of what I wanted to grow into.</h2>
+        <div class="prayer-text">
+          <p>Restoration. Dedicated. Atonement. Consistency. Gentleness. Purpose. Spiritual. Sacred. Steady. Faith. Serenity. Grounded. Presence. Anchored. Strength. Dignity. Blessing. Divine. Trust. Grace. Patience. Safety. Freedom. Pure. Gentle. Steadfast. Love. Honor. Receptive. Worthiness. Peace. Nurture. Connected. Intuitive. Meaningful. Seen. Vulnerable. Authentic. Genuine. Compassionate. Empathy. Stillness. Sanctuary. Warmth. Harmony. Calm. Confident. Accepting. True. Balanced. Profound. Understanding. Heartfelt. Enduring. Secure. Supported. Tender. Value. Core. Soul. Unity. Vision. Growth. Wholeness. Creative. Beautiful. Alive. Hopeful. Motivated. Affection. Gratitude. Helpful. Reflect. Mercy. Restore. Care. Resilient. Thoughtful. Stable. Natural. Centered. Home. Dynamic. Comfort. Open. Healing. Awake. Respect.</p>
+        </div>
+        <div class="entry-body">
+          <p class="entry-note">Not a prayer. A list of words I wanted to live inside. Written the night I realized I couldn't do it alone.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 16. SCRIPTURES — the ground underneath -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">The Ground Underneath</span></div>
+    <div class="entry-grid">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2612-scriptures.jpg" alt="Handwritten scriptures from Revelation, 2 Corinthians, 1 Corinthians, Luke, Proverbs, Habakkuk" class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">The ground</p>
+        <h2 class="entry-title">The verses that carried me when I couldn't carry myself.</h2>
+        <div class="prayer-text">
+          <p><em>"Behold, I have set before you an open door, and no one can shut it."</em><br /><span class="prayer-signoff">&mdash; Revelation 3:8</span></p>
+          <p><em>"For we walk by faith, not by sight."</em><br /><span class="prayer-signoff">&mdash; 2 Corinthians 5:7</span></p>
+          <p><em>"A great and effective door has opened to me, and there are many adversaries."</em><br /><span class="prayer-signoff">&mdash; 1 Corinthians 16:9</span></p>
+          <p><em>"He who is faithful in what is least is faithful also in much."</em><br /><span class="prayer-signoff">&mdash; Luke 16:10</span></p>
+          <p><em>"Trust in the Lord with all your heart, and lean not on your own understanding."</em><br /><span class="prayer-signoff">&mdash; Proverbs 3:5</span></p>
+          <p><em>"For still the vision awaits its appointed time&hellip; it will surely come; it will not delay."</em><br /><span class="prayer-signoff">&mdash; Habakkuk 2:3</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="container">
+    <h2>These weren't meant to be published.</h2>
+    <p>They became something I was willing to share because somebody else might be in the middle, too. If any of it finds you here &mdash; you are not alone in it.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Rising Creative Agency. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const navToggle = document.querySelector('.nav-toggle');
+  const primaryNav = document.getElementById('primary-nav');
+  if (navToggle && primaryNav) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!isOpen));
+      primaryNav.classList.toggle('is-open', !isOpen);
+    });
+    primaryNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navToggle.setAttribute('aria-expanded', 'false');
+      primaryNav.classList.remove('is-open');
+    }));
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 720) {
+        navToggle.setAttribute('aria-expanded', 'false');
+        primaryNav.classList.remove('is-open');
+      }
+    });
+  }
+</script>
+</body>
+</html>
