@@ -184,6 +184,117 @@
     }
     .closing p { color: var(--muted); max-width: 46ch; margin: 0 auto; }
 
+    /* NAV */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(8,18,37,0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .brand-mark { width: 24px; height: 24px; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .nav-link {
+      font-size: 14px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 999px;
+      text-decoration: none;
+    }
+    .nav-link:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+    .btn-nav {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #39cae7 0%, #29b8d5 100%);
+      color: #05212a;
+      font-weight: 800;
+      font-size: 14px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(57,202,231,0.22);
+    }
+    .nav-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 46px; height: 46px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      cursor: pointer;
+    }
+    .nav-toggle-bar {
+      display: block;
+      width: 18px; height: 2px;
+      background: currentColor;
+      border-radius: 999px;
+      position: relative;
+    }
+    .nav-toggle-bar::before, .nav-toggle-bar::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 18px; height: 2px;
+      background: currentColor;
+      border-radius: 999px;
+    }
+    .nav-toggle-bar::before { top: -6px; }
+    .nav-toggle-bar::after { top: 6px; }
+
+    /* FOOTER */
+    .site-footer {
+      padding: 24px 0 42px;
+      color: #94a8d0;
+      font-size: 14px;
+      text-align: center;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 720px) {
+      .nav-toggle { display: inline-flex; margin-left: auto; }
+      .nav-links {
+        display: none;
+        width: 100%;
+        margin-top: 14px;
+        padding: 14px;
+        border-radius: 18px;
+        background: rgba(13,26,49,0.96);
+        border: 1px solid rgba(255,255,255,0.08);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+      .nav-links.is-open { display: flex; }
+      .nav-link { display: block; padding: 12px 14px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; }
+      .btn-nav { text-align: center; justify-content: center; }
+    }
+
     @media (max-width: 700px) {
       .entry-grid, .entry-grid.flip, .entry-full .entry-grid {
         grid-template-columns: 1fr;
@@ -197,6 +308,25 @@
   </style>
 </head>
 <body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./index.html" aria-label="Rising Creative Agency home">
+      <img src="./assets/rising-creative-agency-mark.svg" alt="Rising Creative Agency mark" class="brand-mark" />
+      <span>RISING CREATIVE <span style="color:#7d8289;">AGENCY</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav class="nav-links" id="primary-nav" aria-label="Primary">
+      <a class="nav-link" href="./artists.html">Artists</a>
+      <a class="nav-link" href="./books.html">Books</a>
+      <a class="nav-link" href="./music.html">Music</a>
+      <a class="nav-link" href="./about-rca.html">About RCA</a>
+      <a class="btn-nav" href="./start-here.html">Start Here</a>
+    </nav>
+  </div>
+</header>
 
 <!-- OPENING -->
 <section class="opening">
@@ -477,5 +607,33 @@
   </div>
 </section>
 
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Rising Creative Agency. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const navToggle = document.querySelector('.nav-toggle');
+  const primaryNav = document.getElementById('primary-nav');
+  if (navToggle && primaryNav) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!isOpen));
+      primaryNav.classList.toggle('is-open', !isOpen);
+    });
+    primaryNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navToggle.setAttribute('aria-expanded', 'false');
+      primaryNav.classList.remove('is-open');
+    }));
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 720) {
+        navToggle.setAttribute('aria-expanded', 'false');
+        primaryNav.classList.remove('is-open');
+      }
+    });
+  }
+</script>
 </body>
 </html>
