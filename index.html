@@ -64,12 +64,61 @@
     </div>
   </section>
 
-  <!-- FEATURED BOOK SLIDESHOW -->
-  <section class="section book-feature" aria-labelledby="featured-book-title">
+  <!-- FEATURED BOOK SLIDESHOW — WILLOW (NEW RELEASE) -->
+  <section class="section book-feature" aria-labelledby="featured-book-title-willow">
     <div class="container book-feature-grid">
       <div class="book-feature-copy">
-        <p class="eyebrow">New Release · Sacred Spaces Series</p>
-        <h2 id="featured-book-title">The Shepherd Who Calls You by Name</h2>
+        <p class="eyebrow">New Release · The Divine Series</p>
+        <h2 id="featured-book-title-willow">The Weeping Willow</h2>
+        <p class="lead">A quiet, reflective parable about sorrow, stillness, and a place to rest.</p>
+        <p class="book-feature-sub">A single tree stands in a quiet valley — steady, unhurried, undisturbed. People come with what they have lost. <em>Some leave. But some stay.</em></p>
+        <div class="hero-actions book-feature-actions">
+          <a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/dp/B0GY7VZ7TN" aria-label="Buy The Weeping Willow on Amazon">Buy on Amazon</a>
+          <a class="btn btn-ghost" target="_blank" rel="noopener noreferrer" href="https://www.etsy.com/shop/JacksonsHeartwork" aria-label="Shop artwork on Etsy">Shop Artwork on Etsy</a>
+          <a class="btn btn-ghost" href="./books/the-weeping-willow.html">Learn More</a>
+        </div>
+      </div>
+
+      <div class="book-slideshow"
+           role="region"
+           aria-roledescription="carousel"
+           aria-label="Preview pages from The Weeping Willow"
+           data-autoplay="5000">
+        <div class="book-slideshow-viewport">
+          <ol class="book-slideshow-track" aria-live="polite">
+            <li class="book-slide is-active" aria-roledescription="slide" aria-label="1 of 4: Cover">
+              <img src="./assets/book-the-weeping-willow.jpg" alt="Cover: The Weeping Willow — A Quiet Place of Presence" loading="lazy" />
+            </li>
+            <li class="book-slide" aria-roledescription="slide" aria-label="2 of 4: Interior page — approach">
+              <img src="./assets/willow-slide-01-approach.jpg" alt="Interior illustration: a figure walking toward a willow across an open valley" loading="lazy" />
+            </li>
+            <li class="book-slide" aria-roledescription="slide" aria-label="3 of 4: Interior page — the archway">
+              <img src="./assets/willow-slide-02-archway.jpg" alt="Interior illustration: the draping branches of the willow forming a quiet archway" loading="lazy" />
+            </li>
+            <li class="book-slide" aria-roledescription="slide" aria-label="4 of 4: Interior page — at rest">
+              <img src="./assets/willow-slide-03-at-rest.jpg" alt="Interior illustration: a figure sitting at rest beneath the willow's canopy" loading="lazy" />
+            </li>
+          </ol>
+        </div>
+
+        <button type="button" class="book-slide-arrow book-slide-prev" aria-label="Previous slide">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M15.7 4.3a1 1 0 0 1 0 1.4L9.4 12l6.3 6.3a1 1 0 1 1-1.4 1.4l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 0 1 1.4 0z"/></svg>
+        </button>
+        <button type="button" class="book-slide-arrow book-slide-next" aria-label="Next slide">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8.3 4.3a1 1 0 0 1 1.4 0l7 7a1 1 0 0 1 0 1.4l-7 7a1 1 0 0 1-1.4-1.4L14.6 12 8.3 5.7a1 1 0 0 1 0-1.4z"/></svg>
+        </button>
+
+        <div class="book-slide-dots" role="tablist" aria-label="Choose slide"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED BOOK SLIDESHOW — SHEPHERD -->
+  <section class="section book-feature" aria-labelledby="featured-book-title-shepherd">
+    <div class="container book-feature-grid">
+      <div class="book-feature-copy">
+        <p class="eyebrow">Also Featured · The Divine Series</p>
+        <h2 id="featured-book-title-shepherd">The Shepherd Who Calls You by Name</h2>
         <p class="lead">A quiet, contemplative story of wandering, being found, and learning to rest again.</p>
         <p class="book-feature-sub">Told through a simple parable and hand-drawn imagery — a lamb who drifts, a Shepherd who comes near. <em>Not loudly. Not forcefully. But steadily, gently… and by name.</em></p>
         <div class="hero-actions book-feature-actions">
@@ -283,10 +332,8 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Featured book slideshow
-  (function initBookSlideshow() {
-    const root = document.querySelector('.book-slideshow');
-    if (!root) return;
+  // Featured book slideshow(s) — support multiple instances on the page
+  document.querySelectorAll('.book-slideshow').forEach(function (root) {
     const slides = Array.from(root.querySelectorAll('.book-slide'));
     if (slides.length < 2) return;
     const prev = root.querySelector('.book-slide-prev');
@@ -350,7 +397,7 @@
 
     render();
     start();
-  })();
+  });
 
   const navToggle = document.querySelector('.nav-toggle');
   const primaryNav = document.getElementById('primary-nav');

@@ -47,7 +47,7 @@
     <div class="container">
       <p class="eyebrow">Book Catalog</p>
       <h1>Browse the complete book collection.</h1>
-      <p class="lead section-intro">From the Rise &amp; Shine journey to the Sacred Guide and Sacred Spaces titles, this page gathers the full catalog in one place so readers can see the whole body of work at a glance.</p>
+      <p class="lead section-intro">From the Rise &amp; Shine journey to the Sacred Guide titles, this page gathers the full catalog in one place so readers can see the whole body of work at a glance.</p>
       <div class="button-cluster">
         <a class="btn" href="https://risingcreativeagency.gumroad.com/l/7DaystoReset" target="_blank" rel="noopener noreferrer">Start the Free Reset</a>
         <a class="btn btn-ghost" href="my-story.html">Read Jackson's Story</a>
@@ -55,12 +55,61 @@
     </div>
   </section>
 
-  <!-- FEATURED BOOK SLIDESHOW -->
-  <section class="section book-feature" aria-labelledby="featured-book-title">
+  <!-- FEATURED BOOK SLIDESHOW — WILLOW (NEW RELEASE) -->
+  <section class="section book-feature" aria-labelledby="featured-book-title-willow">
     <div class="container book-feature-grid">
       <div class="book-feature-copy">
-        <p class="eyebrow">New Release · Sacred Spaces Series</p>
-        <h2 id="featured-book-title">The Shepherd Who Calls You by Name</h2>
+        <p class="eyebrow">New Release · The Divine Series</p>
+        <h2 id="featured-book-title-willow">The Weeping Willow</h2>
+        <p class="lead">A quiet, reflective parable about sorrow, stillness, and a place to rest.</p>
+        <p class="book-feature-sub">A single tree stands in a quiet valley — steady, unhurried, undisturbed. People come with what they have lost. <em>Some leave. But some stay.</em></p>
+        <div class="hero-actions book-feature-actions">
+          <a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/dp/B0GY7VZ7TN" aria-label="Buy The Weeping Willow on Amazon">Buy on Amazon</a>
+          <a class="btn btn-ghost" target="_blank" rel="noopener noreferrer" href="https://www.etsy.com/shop/JacksonsHeartwork" aria-label="Shop artwork on Etsy">Shop Artwork on Etsy</a>
+          <a class="btn btn-ghost" href="./books/the-weeping-willow.html">Learn More</a>
+        </div>
+      </div>
+
+      <div class="book-slideshow"
+           role="region"
+           aria-roledescription="carousel"
+           aria-label="Preview pages from The Weeping Willow"
+           data-autoplay="5000">
+        <div class="book-slideshow-viewport">
+          <ol class="book-slideshow-track" aria-live="polite">
+            <li class="book-slide is-active" aria-roledescription="slide" aria-label="1 of 4: Cover">
+              <img src="./assets/book-the-weeping-willow.jpg" alt="Cover: The Weeping Willow — A Quiet Place of Presence" loading="lazy" />
+            </li>
+            <li class="book-slide" aria-roledescription="slide" aria-label="2 of 4: Interior page — approach">
+              <img src="./assets/willow-slide-01-approach.jpg" alt="Interior illustration: a figure walking toward a willow across an open valley" loading="lazy" />
+            </li>
+            <li class="book-slide" aria-roledescription="slide" aria-label="3 of 4: Interior page — the archway">
+              <img src="./assets/willow-slide-02-archway.jpg" alt="Interior illustration: the draping branches of the willow forming a quiet archway" loading="lazy" />
+            </li>
+            <li class="book-slide" aria-roledescription="slide" aria-label="4 of 4: Interior page — at rest">
+              <img src="./assets/willow-slide-03-at-rest.jpg" alt="Interior illustration: a figure sitting at rest beneath the willow's canopy" loading="lazy" />
+            </li>
+          </ol>
+        </div>
+
+        <button type="button" class="book-slide-arrow book-slide-prev" aria-label="Previous slide">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M15.7 4.3a1 1 0 0 1 0 1.4L9.4 12l6.3 6.3a1 1 0 1 1-1.4 1.4l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 0 1 1.4 0z"/></svg>
+        </button>
+        <button type="button" class="book-slide-arrow book-slide-next" aria-label="Next slide">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8.3 4.3a1 1 0 0 1 1.4 0l7 7a1 1 0 0 1 0 1.4l-7 7a1 1 0 0 1-1.4-1.4L14.6 12 8.3 5.7a1 1 0 0 1 0-1.4z"/></svg>
+        </button>
+
+        <div class="book-slide-dots" role="tablist" aria-label="Choose slide"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED BOOK SLIDESHOW — SHEPHERD -->
+  <section class="section book-feature" aria-labelledby="featured-book-title-shepherd">
+    <div class="container book-feature-grid">
+      <div class="book-feature-copy">
+        <p class="eyebrow">Also Featured · The Divine Series</p>
+        <h2 id="featured-book-title-shepherd">The Shepherd Who Calls You by Name</h2>
         <p class="lead">A quiet, contemplative story of wandering, being found, and learning to rest again.</p>
         <p class="book-feature-sub">Told through a simple parable and hand-drawn imagery — a lamb who drifts, a Shepherd who comes near. <em>Not loudly. Not forcefully. But steadily, gently… and by name.</em></p>
         <div class="hero-actions book-feature-actions">
@@ -130,12 +179,28 @@
     </div>
   </section>
 
+  <section id="divine-series" class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">The Divine Series</p>
+          <h2>A new series of sacred stories.</h2>
+          <p class="section-lead">Contemplative illustrated parables exploring presence, sorrow, belonging, and the quiet work of the heart — told through simple imagery and gentle language.</p>
+        </div>
+      </div>
+      <div class="book-index-grid">
+        <article class="book-index-card"><div class="cover-wrap"><img class="cover" src="assets/book-the-weeping-willow.jpg" alt="The Weeping Willow" /></div><div class="copy"><span class="series-badge">New Release · The Divine Series</span><h3>The Weeping Willow</h3><p>A reflective parable about sorrow, stillness, and a quiet place to rest.</p><div class="button-row"><a class="btn btn-block" href="books/the-weeping-willow.html">View Details</a></div></div></article>
+        <article class="book-index-card"><div class="cover-wrap"><img class="cover" src="assets/book-the-shepherd-who-calls-you-by-name.jpg" alt="The Shepherd Who Calls You by Name" /></div><div class="copy"><span class="series-badge">The Divine Series</span><h3>The Shepherd Who Calls You by Name</h3><p>A quiet, contemplative story of wandering, being found, and learning to rest again.</p><div class="button-row"><a class="btn btn-block" href="books/the-shepherd-who-calls-you-by-name.html">View Details</a></div></div></article>
+      </div>
+    </div>
+  </section>
+
   <section id="parables" class="section">
     <div class="container">
       <div class="section-head">
         <div>
           <p class="eyebrow">Books and parables</p>
-          <h2>Sacred Guide and Sacred Spaces titles.</h2>
+          <h2>Rising Heart Titles</h2>
           <p class="section-lead">Illustrated stories and contemplative books exploring healing, trust, surrender, restoration, and spiritual renewal.</p>
         </div>
       </div>
@@ -144,10 +209,8 @@
         <article class="book-index-card"><div class="cover-wrap"><img class="cover" src="assets/book-warrior-wounded-dove.jpg" alt="The Warrior and The Wounded Dove" /></div><div class="copy"><span class="series-badge">Sacred Guide Series</span><h3>The Warrior and The Wounded Dove</h3><p>A quiet illustrated parable about love, faith, and the courage to let go.</p><div class="button-row"><a class="btn btn-block" href="books/the-warrior-and-the-wounded-dove.html">View Details</a></div></div></article>
         <article class="book-index-card"><div class="cover-wrap"><img class="cover" src="assets/book-the-dove-the-warrior-and-the-healer.jpg" alt="The Dove, the Warrior, and the Healer" /></div><div class="copy"><span class="series-badge">Sacred Guide Series</span><h3>The Dove, the Warrior, and the Healer</h3><p>A reflective illustrated parable of grace, surrender, healing, and restoration.</p><div class="button-row"><a class="btn btn-block" href="books/the-dove-the-warrior-and-the-healer.html">View Details</a></div></div></article>
         <article class="book-index-card"><div class="cover-wrap"><img class="cover" src="assets/book-the-shepherd-who-names-you.jpg" alt="The Shepherd Who Names You" /></div><div class="copy"><span class="series-badge">Sacred Guide Series</span><h3>The Shepherd Who Names You</h3><p>A quiet illustrated parable about fear, gentleness, and the Shepherd who restores the heart.</p><div class="button-row"><a class="btn btn-block" href="books/the-shepherd-who-names-you.html">View Details</a></div></div></article>
-        <article class="book-index-card"><div class="cover-wrap"><img class="cover" src="assets/book-the-shepherd-who-calls-you-by-name.jpg" alt="The Shepherd Who Calls You by Name" /></div><div class="copy"><span class="series-badge">New Release</span><h3>The Shepherd Who Calls You by Name</h3><p>A quiet, contemplative story of wandering, being found, and learning to rest again.</p><div class="button-row"><a class="btn btn-block" href="books/the-shepherd-who-calls-you-by-name.html">View Details</a></div></div></article>
         <article class="book-index-card"><div class="cover-wrap"><img class="cover" src="assets/book-house-the-architect-restored.jpg" alt="The House the Architect Restored" /></div><div class="copy"><span class="series-badge">Sacred Guide Series</span><h3>The House the Architect Restored</h3><p>A contemplative illustrated parable about restoration, healing, and the quiet courage to rebuild.</p><div class="button-row"><a class="btn btn-block" href="books/the-house-the-architect-restored.html">View Details</a></div></div></article>
         <article class="book-index-card"><div class="cover-wrap"><img class="cover" src="assets/book-the-gardener-of-the-garden.jpg" alt="The Gardener of The Garden" /></div><div class="copy"><span class="series-badge">Sacred Guide Series</span><h3>The Gardener of The Garden</h3><p>A peaceful illustrated parable about growth, trust, timing, and becoming.</p><div class="button-row"><a class="btn btn-block" href="books/the-gardener-of-the-garden.html">View Details</a></div></div></article>
-        <article class="book-index-card"><div class="cover-wrap"><img class="cover" src="assets/book-the-weeping-willow.jpg" alt="The Weeping Willow" /></div><div class="copy"><span class="series-badge">Coming Soon</span><h3>The Weeping Willow</h3><p>A reflective parable about sorrow, stillness, and a quiet place to rest.</p><div class="button-row"><a class="btn btn-block" href="books/the-weeping-willow.html">View Details</a></div></div></article>
       </div>
     </div>
   </section>
@@ -178,10 +241,8 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Featured book slideshow
-  (function initBookSlideshow() {
-    const root = document.querySelector('.book-slideshow');
-    if (!root) return;
+  // Featured book slideshows (supports multiple on a single page)
+  document.querySelectorAll('.book-slideshow').forEach(function (root) {
     const slides = Array.from(root.querySelectorAll('.book-slide'));
     if (slides.length < 2) return;
     const prev = root.querySelector('.book-slide-prev');
@@ -222,8 +283,8 @@
     function stop() { if (timer) { clearInterval(timer); timer = null; } }
     function restart() { stop(); start(); }
 
-    prev.addEventListener('click', () => { prevSlide(); restart(); });
-    next.addEventListener('click', () => { nextSlide(); restart(); });
+    if (prev) prev.addEventListener('click', () => { prevSlide(); restart(); });
+    if (next) next.addEventListener('click', () => { nextSlide(); restart(); });
 
     root.addEventListener('mouseenter', () => { paused = true; });
     root.addEventListener('mouseleave', () => { paused = false; });
@@ -239,7 +300,7 @@
 
     render();
     start();
-  })();
+  });
 
   const navToggle = document.querySelector('.nav-toggle');
   const primaryNav = document.getElementById('primary-nav');
