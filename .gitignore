@@ -8,3 +8,5 @@
 *.tgz
 *.7z
 *.rar
+.DS_Store
+prayers/.DS_Store
