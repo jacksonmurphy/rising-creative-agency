@@ -64,8 +64,8 @@
     </div>
   </section>
 
-  <!-- FEATURED BOOK SLIDESHOW — WILLOW (NEW RELEASE) -->
-  <section class="section book-feature" aria-labelledby="featured-book-title-willow">
+  <!-- TEMPORARILY HIDDEN: remove `hidden` attribute on the next <section> to re-enable Willow band -->
+  <section class="section book-feature" hidden aria-labelledby="featured-book-title-willow">
     <div class="container book-feature-grid">
       <div class="book-feature-copy">
         <p class="eyebrow">New Release · The Divine Series</p>
@@ -113,8 +113,8 @@
     </div>
   </section>
 
-  <!-- FEATURED BOOK SLIDESHOW — SHEPHERD -->
-  <section class="section book-feature" aria-labelledby="featured-book-title-shepherd">
+  <!-- TEMPORARILY HIDDEN: remove `hidden` attribute on the next <section> to re-enable Shepherd Who Calls You by Name band -->
+  <section class="section book-feature" hidden aria-labelledby="featured-book-title-shepherd">
     <div class="container book-feature-grid">
       <div class="book-feature-copy">
         <p class="eyebrow">Also Featured · The Divine Series</p>
@@ -146,6 +146,55 @@
             </li>
             <li class="book-slide" aria-roledescription="slide" aria-label="4 of 4: Interior page — carried home">
               <img src="./assets/shepherd-slide-03-carried.jpg" alt="Interior illustration: the Shepherd carries the lamb in his arms" loading="lazy" />
+            </li>
+          </ol>
+        </div>
+
+        <button type="button" class="book-slide-arrow book-slide-prev" aria-label="Previous slide">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M15.7 4.3a1 1 0 0 1 0 1.4L9.4 12l6.3 6.3a1 1 0 1 1-1.4 1.4l-7-7a1 1 0 0 1 0-1.4l7-7a1 1 0 0 1 1.4 0z"/></svg>
+        </button>
+        <button type="button" class="book-slide-arrow book-slide-next" aria-label="Next slide">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8.3 4.3a1 1 0 0 1 1.4 0l7 7a1 1 0 0 1 0 1.4l-7 7a1 1 0 0 1-1.4-1.4L14.6 12 8.3 5.7a1 1 0 0 1 0-1.4z"/></svg>
+        </button>
+
+        <div class="book-slide-dots" role="tablist" aria-label="Choose slide"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW RELEASE — The Warrior and The Wounded Dove -->
+  <section class="section book-feature" aria-labelledby="featured-book-title-warrior-dove">
+    <div class="container book-feature-grid">
+      <div class="book-feature-copy">
+        <p class="eyebrow">New Release · A Parable of Surrender</p>
+        <h2 id="featured-book-title-warrior-dove">The Warrior and The Wounded Dove</h2>
+        <p class="lead">A quiet parable about love, faith, and the courage to let go.</p>
+        <p class="book-feature-sub">The fiercest battles are not fought with swords, but within the heart. <em>Not a story about winning love back &mdash; a story about becoming whole.</em></p>
+        <div class="hero-actions book-feature-actions">
+          <a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.amazon.com/dp/B0G8V56X6X" aria-label="Buy The Warrior and The Wounded Dove on Amazon">Buy on Amazon</a>
+          <a class="btn btn-ghost" target="_blank" rel="noopener noreferrer" href="https://www.etsy.com/shop/JacksonsHeartwork" aria-label="Buy prints of the artwork on Etsy" hidden>Buy the Artwork on Etsy</a>
+          <a class="btn btn-ghost" href="./books/the-warrior-and-the-wounded-dove.html">Learn More</a>
+        </div>
+      </div>
+
+      <div class="book-slideshow"
+           role="region"
+           aria-roledescription="carousel"
+           aria-label="Preview pages from The Warrior and The Wounded Dove"
+           data-autoplay="5000">
+        <div class="book-slideshow-viewport">
+          <ol class="book-slideshow-track" aria-live="polite">
+            <li class="book-slide is-active" aria-roledescription="slide" aria-label="1 of 4: Cover">
+              <img src="./assets/book-warrior-wounded-dove.jpg" alt="Cover: The Warrior and The Wounded Dove" loading="lazy" />
+            </li>
+            <li class="book-slide" aria-roledescription="slide" aria-label="2 of 4: Interior page — the warrior holds the dove">
+              <img src="./assets/warrior-slide-01-holding.jpg" alt="Interior illustration: the warrior holds the wounded dove in his open palm" loading="lazy" />
+            </li>
+            <li class="book-slide" aria-roledescription="slide" aria-label="3 of 4: Interior page — the release">
+              <img src="./assets/warrior-slide-02-surrender.jpg" alt="Interior illustration: the warrior stands in an open field, arms outstretched, releasing" loading="lazy" />
+            </li>
+            <li class="book-slide" aria-roledescription="slide" aria-label="4 of 4: Interior page — beneath the oak">
+              <img src="./assets/warrior-slide-03-under-oak.jpg" alt="Interior illustration: the warrior and the dove together beneath a great oak" loading="lazy" />
             </li>
           </ol>
         </div>
