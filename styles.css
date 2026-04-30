@@ -985,11 +985,13 @@ p { margin: 0; color: var(--muted); }
 
 /* ===== RCA Rebrand — Tricia's Feedback (2026-04) ===== */
 
-/* Hero grid — copy left, image right */
+/* Hero grid — copy left, image/slideshow right
+   Column ratio + gap match .book-feature-grid so the hero slideshow
+   renders at the same size as the book-feature slideshows below it. */
 .rca-hero-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 48px;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 56px;
   align-items: center;
 }
 
@@ -1180,8 +1182,8 @@ p { margin: 0; color: var(--muted); }
   }
 }
 
-/* Hero section padding + copy sizing (two-col version) */
-.rca-hero { padding: 64px 0 56px; }
+/* Hero section padding + copy sizing (two-col version) — matched to .book-feature */
+.rca-hero { padding: 48px 0 72px; }
 .rca-hero-copy { max-width: 600px; }
 .rca-hero-copy h1 { max-width: 16ch; margin-bottom: 24px; font-size: clamp(2.4rem, 5vw, 4rem); }
 .rca-hero-copy .lead { margin-bottom: 32px; }
