@@ -293,6 +293,67 @@
     .nav-toggle-bar::before { top: -6px; }
     .nav-toggle-bar::after { top: 6px; }
 
+    /* FEATURED PRAYER HERO */
+    .featured-hero {
+      padding: 90px 0 60px;
+      border-bottom: 1px solid var(--line);
+    }
+    .featured-hero-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .featured-hero-img-wrap { position: relative; }
+    .featured-hero-img {
+      width: 100%;
+      max-width: 420px;
+      display: block;
+      border-radius: 3px;
+      filter: brightness(0.97) contrast(1.04);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+    }
+    .featured-hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    .featured-hero-eyebrow::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: rgba(57,202,231,0.4);
+    }
+    .featured-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4.4vw, 3.4rem);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #f0f4ff;
+      margin: 0 0 22px;
+    }
+    .featured-hero-caption {
+      font-style: italic;
+      font-size: 0.875rem;
+      color: rgba(184,195,223,0.7);
+      margin-top: 22px;
+      letter-spacing: 0.02em;
+    }
+    @media (max-width: 820px) {
+      .featured-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .featured-hero-img { max-width: 320px; margin: 0 auto; }
+      .featured-hero { padding: 64px 0 40px; }
+    }
+
     /* FOOTER */
     .site-footer {
       padding: 24px 0 42px;
@@ -354,323 +415,91 @@
   </div>
 </header>
 
+<!-- FEATURED PRAYER HERO -->
+<section class="featured-hero">
+  <div class="container">
+    <div class="featured-hero-grid">
+      <div class="featured-hero-img-wrap">
+        <img src="assets/IMG_3016-love.jpg" alt="Featured prayer: I place this relationship in Your hands." class="featured-hero-img" />
+      </div>
+      <div class="featured-hero-copy">
+        <p class="featured-hero-eyebrow">Featured &middot; The Latest Page</p>
+        <h1>I place this relationship in Your hands.</h1>
+        <div class="prayer-text">
+          <p>God, You know my heart and how much I love her. I place this relationship in Your hands.</p>
+          <p>If it's meant to be, bring it back in a healthy and lasting way. If it's not, give me the strength to let go.</p>
+          <p>Give me peace in this moment. Help me stay grounded, steady, and focused on my path.</p>
+          <p>I trust You with what I cannot control.</p>
+          <p><span class="prayer-signoff">Amen. &mdash; jm</span></p>
+        </div>
+        <p class="featured-hero-caption">Where I am now. The pages below are how I got here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- OPENING -->
 <section class="opening">
   <div class="container">
     <p class="eyebrow">The Prayers</p>
-    <h1>I started writing these down because I didn't know what else to do.</h1>
-    <p>Some began as prayers. Some began as the rawest version of me &mdash; the nights I couldn't pretend anymore. Both are here.</p>
+    <h1>The story, in reverse.</h1>
+    <p>The latest at the top. The rawest at the bottom. Scroll far enough, and you'll see where I started.</p>
   </div>
 </section>
 
 <section class="pull-quote">
   <div class="container">
-    <blockquote>You can't pray until you've been honest. Some of these pages are the honesty. The rest are what grew out of it.</blockquote>
+    <blockquote>You can't pray until you've been honest. The further down this page you go, the more honest it gets.</blockquote>
   </div>
 </section>
 
-<!-- 1. CRUMBLE — raw, before prayer -->
+<!-- SCRIPTURES — the ground underneath -->
 <section class="entry">
   <div class="container">
-    <div class="season-row"><span class="season-label">Before the Prayer · The Crumble</span></div>
+    <div class="season-row"><span class="season-label">The Ground Underneath</span></div>
     <div class="entry-grid">
       <div class="drawing-wrap">
-        <img src="assets/IMG_2593-crumble.jpg" alt="Handwritten journal entry: When your whole world crumbles" class="drawing-img" />
+        <img src="assets/IMG_2612-scriptures.jpg" alt="Handwritten scriptures from Revelation, 2 Corinthians, 1 Corinthians, Luke, Proverbs, Habakkuk" class="drawing-img" />
       </div>
       <div class="entry-copy">
-        <p class="entry-season-tag">Not a prayer yet</p>
-        <h2 class="entry-title">When your whole world crumbles, where do you go?</h2>
+        <p class="entry-season-tag">The ground</p>
+        <h2 class="entry-title">The verses that carried me when I couldn't carry myself.</h2>
         <div class="prayer-text">
-          <p>You didn't win tonight.</p>
-          <p>When your whole world crumbles and nothing else matters &mdash; what do you do? Where do you go?</p>
+          <p><em>"Behold, I have set before you an open door, and no one can shut it."</em><br /><span class="prayer-signoff">&mdash; Revelation 3:8</span></p>
+          <p><em>"For we walk by faith, not by sight."</em><br /><span class="prayer-signoff">&mdash; 2 Corinthians 5:7</span></p>
+          <p><em>"A great and effective door has opened to me, and there are many adversaries."</em><br /><span class="prayer-signoff">&mdash; 1 Corinthians 16:9</span></p>
+          <p><em>"He who is faithful in what is least is faithful also in much."</em><br /><span class="prayer-signoff">&mdash; Luke 16:10</span></p>
+          <p><em>"Trust in the Lord with all your heart, and lean not on your own understanding."</em><br /><span class="prayer-signoff">&mdash; Proverbs 3:5</span></p>
+          <p><em>"For still the vision awaits its appointed time&hellip; it will surely come; it will not delay."</em><br /><span class="prayer-signoff">&mdash; Habakkuk 2:3</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORDS — the words I wanted to live inside -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">The Words I Wanted to Live Inside</span></div>
+    <div class="entry-grid flip">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2601-words.jpg" alt="Handwritten list of words: restoration, dedicated, atonement, consistency, gentleness, purpose..." class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">The words</p>
+        <h2 class="entry-title">A list of what I wanted to grow into.</h2>
+        <div class="prayer-text">
+          <p>Restoration. Dedicated. Atonement. Consistency. Gentleness. Purpose. Spiritual. Sacred. Steady. Faith. Serenity. Grounded. Presence. Anchored. Strength. Dignity. Blessing. Divine. Trust. Grace. Patience. Safety. Freedom. Pure. Gentle. Steadfast. Love. Honor. Receptive. Worthiness. Peace. Nurture. Connected. Intuitive. Meaningful. Seen. Vulnerable. Authentic. Genuine. Compassionate. Empathy. Stillness. Sanctuary. Warmth. Harmony. Calm. Confident. Accepting. True. Balanced. Profound. Understanding. Heartfelt. Enduring. Secure. Supported. Tender. Value. Core. Soul. Unity. Vision. Growth. Wholeness. Creative. Beautiful. Alive. Hopeful. Motivated. Affection. Gratitude. Helpful. Reflect. Mercy. Restore. Care. Resilient. Thoughtful. Stable. Natural. Centered. Home. Dynamic. Comfort. Open. Healing. Awake. Respect.</p>
         </div>
         <div class="entry-body">
-          <p class="entry-note">Same line written twice, the second time in a shakier hand. Like the question was asking itself by then.</p>
+          <p class="entry-note">Not a prayer. A list of words I wanted to live inside. Written the night I realized I couldn't do it alone.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 2. DRUGS — raw, before prayer -->
-<section class="entry">
-  <div class="container">
-    <div class="season-row"><span class="season-label">Addiction · The Reckoning</span></div>
-    <div class="entry-grid flip">
-      <div class="drawing-wrap">
-        <img src="assets/IMG_2594-drugs.jpg" alt="Handwritten: I did all the drugs." class="drawing-img" />
-      </div>
-      <div class="entry-copy">
-        <p class="entry-season-tag">Not a prayer yet</p>
-        <h2 class="entry-title">I did all the drugs.</h2>
-        <div class="prayer-text">
-          <p>I did all the drugs. You name them, I did them.</p>
-          <p>And I'll do them again.</p>
-          <p>I did all the <em>DRUGS!!!</em></p>
-        </div>
-        <div class="entry-body">
-          <p class="entry-note">Before I could pray, I had to tell the truth about where I was. This page was the truth.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 3. TIRED — raw, before prayer -->
-<section class="entry">
-  <div class="container">
-    <div class="season-row"><span class="season-label">Exhaustion · Losing the Self</span></div>
-    <div class="entry-grid">
-      <div class="drawing-wrap">
-        <img src="assets/IMG_2595-tired.jpg" alt="Handwritten: Have you ever been so tired that you don't know who you are?" class="drawing-img" />
-      </div>
-      <div class="entry-copy">
-        <p class="entry-season-tag">Not a prayer yet</p>
-        <h2 class="entry-title">Have you ever been so tired that you don't know who you are?</h2>
-        <div class="prayer-text">
-          <p>Have you ever been so tired that you don't know what to do?</p>
-          <p>Have you ever been so tired that you don't know who you are?</p>
-        </div>
-        <div class="entry-body">
-          <p class="entry-note">When you're tired in a way sleep can't fix, the question changes shape.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 4. LOST PATH — first prayer -->
-<section class="entry">
-  <div class="container">
-    <div class="season-row"><span class="season-label">The First Prayer · Holding Still in the Storm</span></div>
-    <div class="entry-grid flip">
-      <div class="drawing-wrap">
-        <img src="assets/IMG_2592-lost-path.jpg" alt="Prayer: God, if I'm on a lost path, I pray for the strength to hold the right path." class="drawing-img" />
-      </div>
-      <div class="entry-copy">
-        <p class="entry-season-tag">The first prayer</p>
-        <h2 class="entry-title">God, if I'm on a lost path, I pray for the strength to hold the right path.</h2>
-        <div class="prayer-text">
-          <p>God, if I'm on a lost path, I pray for the strength to hold the right path.</p>
-          <p>Until then, I will hold still in the storm &mdash; trusting that I have been resurrected into the man who offers unconditional safety.</p>
-          <p>In Jesus' name, I pray.</p>
-          <p><span class="prayer-signoff">Amen.</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 5. WITHDRAW — crying out -->
-<section class="entry">
-  <div class="container">
-    <div class="season-row"><span class="season-label">The Crying Out</span></div>
-    <div class="entry-grid">
-      <div class="drawing-wrap">
-        <img src="assets/IMG_2607-withdraw.jpg" alt="Prayer echoing Psalm 143:7: Do not withdraw Your presence from me." class="drawing-img" />
-      </div>
-      <div class="entry-copy">
-        <p class="entry-season-tag">The crying out</p>
-        <h2 class="entry-title">Do not withdraw Your presence from me.</h2>
-        <div class="prayer-text">
-          <p>Do not withdraw Your presence and favor from me, because if You do, I will be as good as dead.</p>
-          <p>My very life depends on Your presence. If You turn away from me, even for a moment, I will be spiritually and emotionally destroyed.</p>
-          <p>I will lose all hope and be no different from a dead person in the grave &mdash; powerless, forgotten, and separated from You.</p>
-          <p><em>"Do not hide Your face from me, or I will be like those who go down to the pit."</em></p>
-          <p><span class="prayer-signoff">&mdash; Psalm 143:7</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 6. DESIRES — surrender -->
-<section class="entry">
-  <div class="container">
-    <div class="season-row"><span class="season-label">The Surrender</span></div>
-    <div class="entry-grid flip">
-      <div class="drawing-wrap">
-        <img src="assets/IMG_2606-desires.jpg" alt="Prayer of surrender: Your will, not mine." class="drawing-img" />
-      </div>
-      <div class="entry-copy">
-        <p class="entry-season-tag">The surrender</p>
-        <h2 class="entry-title">Your will, not mine. Your timing, not mine. Your love, always.</h2>
-        <div class="prayer-text">
-          <p>Lord, I surrender my desires, my plans, and my path to You.</p>
-          <p>Lead me where You want me to go. Shape me into who You want me to become.</p>
-          <p>Your will, not mine. Your timing, not mine. Your love, always.</p>
-          <p><span class="prayer-signoff">Amen. &hearts;</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 7. HELP — honoring the heart without fear -->
-<section class="entry">
-  <div class="container">
-    <div class="season-row"><span class="season-label">Honoring the Heart Without Fear</span></div>
-    <div class="entry-grid">
-      <div class="drawing-wrap">
-        <img src="assets/IMG_2611-help.jpg" alt="Prayer: Help me hear my heart without being ruled by fear." class="drawing-img" />
-      </div>
-      <div class="entry-copy">
-        <p class="entry-season-tag">Help</p>
-        <h2 class="entry-title">Help me hear my heart without being ruled by fear.</h2>
-        <div class="prayer-text">
-          <p>God, help me hear my heart without being ruled by fear.</p>
-          <p>Show me how to honor what is true in me without grasping for outcomes. Teach me the difference between patience and self-abandonment.</p>
-          <p>Give me the courage to stay present to love &mdash; and the wisdom to know when love asks to speak, not just wait.</p>
-          <p>If I am meant to remain here, strengthen me without hardening me. If I am meant to move, let it come from clarity, not pain.</p>
-          <p>Guide me step by step &mdash; not toward certainty, but toward integrity. And help me trust that honoring my heart will not destroy what is real.</p>
-          <p><span class="prayer-signoff">Amen. &mdash; jm</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 8. MAN — featured full-width -->
-<section class="entry entry-full">
-  <div class="container">
-    <div class="season-row"><span class="season-label">The Becoming · The Prayer for Who To Be</span></div>
-    <div class="entry-grid">
-      <div class="entry-copy">
-        <p class="entry-season-tag">The becoming</p>
-        <h2 class="entry-title">Make me into the man You created me to be.</h2>
-        <div class="prayer-text">
-          <p>Heavenly Father, make me into the man You created me to be.</p>
-          <p>Strengthen my heart, sharpen my mind, and steady my spirit. Give me the courage to rise each day with purpose, gratitude, and faith.</p>
-          <p>Guide me toward financial stability and bless the work of my hands. Let my creativity &mdash; my songs, my books, my art &mdash; find the audience You have prepared for them. Let these gifts provide for me, sustain me, and glorify You.</p>
-          <p>Keep my work flowing, my community growing, and my spirit grounded in service and love.</p>
-          <p>Help me care for my family with wisdom, compassion, and strength. Heal the grief, the loss, and the heartbreak I carry. Transform this pain into wisdom, this waiting into growth, and this longing into deeper surrender.</p>
-          <p>Prepare my heart for whatever love You have planned. Let me become the kind of man who can give and receive love with openness, humility, and truth.</p>
-          <p><span class="prayer-signoff">Amen.</span></p>
-        </div>
-      </div>
-      <div class="drawing-wrap">
-        <img src="assets/IMG_2605-man.jpg" alt="Prayer: Heavenly Father, make me into the man You created me to be." class="drawing-img" style="max-width:100%;" />
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 9. TEACH — faith as resting -->
-<section class="entry">
-  <div class="container">
-    <div class="season-row"><span class="season-label">Faith As Resting</span></div>
-    <div class="entry-grid flip">
-      <div class="drawing-wrap">
-        <img src="assets/IMG_2604-teach.jpg" alt="Prayer: Teach me that faith is not waiting for what I want, but resting in what You will." class="drawing-img" />
-      </div>
-      <div class="entry-copy">
-        <p class="entry-season-tag">Teach me</p>
-        <h2 class="entry-title">Faith is not waiting for what I want. It's resting in what You will.</h2>
-        <div class="prayer-text">
-          <p>Teach me that faith is not waiting for what I want, but resting in what You will.</p>
-          <p>Let Your perfect love lead us both to peace &mdash; in Your timing, by Your hands, for Your glory.</p>
-          <p><span class="prayer-signoff">Amen. &hearts;</span></p>
-          <p><em>"The God of all grace&hellip; will Himself restore, confirm, strengthen, and establish you."</em></p>
-          <p><span class="prayer-signoff">&mdash; 1 Peter 5:10</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 10. MORNING — love held in silence -->
-<section class="entry">
-  <div class="container">
-    <div class="season-row"><span class="season-label">Love Held in Silence</span></div>
-    <div class="entry-grid">
-      <div class="drawing-wrap">
-        <img src="assets/IMG_2602-morning.jpg" alt="Morning Prayer for Holding Love in Silence" class="drawing-img" />
-      </div>
-      <div class="entry-copy">
-        <p class="entry-season-tag">A morning prayer</p>
-        <h2 class="entry-title">For holding love in silence.</h2>
-        <div class="prayer-text">
-          <p>Father, this morning my heart is heavy with love I cannot give and words I cannot send. But I place them all in Your hands &mdash; every thought, every ache, every longing.</p>
-          <p>Teach me that love isn't lost when it waits; it deepens. Help me remember that silence is not absence, but the sacred ground where You do Your quietest work.</p>
-          <p>When I feel the urge to reach out, remind me that You are already reaching &mdash; in ways I never could.</p>
-          <p>Let my restraint become a form of prayer. Let my patience become proof of trust. Let my peace speak louder than my words.</p>
-          <p>Remind me that love held in Your timing is never wasted &mdash; it's only being refined. Keep her safe in Your arms. Keep me steady in Your grace. And keep our hearts anchored in the promise that nothing surrendered in love is ever lost in You.</p>
-          <p><span class="prayer-signoff">Amen.</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 11. FAITHFULLY — a quiet note -->
-<section class="entry">
-  <div class="container">
-    <div class="season-row"><span class="season-label">A Quiet Note</span></div>
-    <div class="entry-grid flip">
-      <div class="drawing-wrap">
-        <img src="assets/IMG_2603-faithfully.jpg" alt="Handwritten: My love is faithfully resting in the quiet corner of your heart." class="drawing-img" />
-      </div>
-      <div class="entry-copy">
-        <p class="entry-season-tag">A quiet note</p>
-        <h2 class="entry-title">My love is faithfully resting in the quiet corner of your heart.</h2>
-        <div class="prayer-text">
-          <p>My love is faithfully resting in the quiet corner of your heart.</p>
-          <p><em>"Love is patient, love is kind&hellip; it always protects, always trusts, always hopes, always perseveres."</em></p>
-          <p><span class="prayer-signoff">&mdash; 1 Corinthians 13:4, 7</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 12. STEADY — the steadiness -->
-<section class="entry">
-  <div class="container">
-    <div class="season-row"><span class="season-label">The Steadiness</span></div>
-    <div class="entry-grid">
-      <div class="drawing-wrap">
-        <img src="assets/IMG_2608-steady.jpg" alt="Prayer: Steady my spirit today." class="drawing-img" />
-      </div>
-      <div class="entry-copy">
-        <p class="entry-season-tag">Steady</p>
-        <h2 class="entry-title">Steady my spirit today.</h2>
-        <div class="prayer-text">
-          <p>Father, steady my spirit today. Quiet every fear and awaken every hope. Guide my steps with Your peace and my heart with Your love.</p>
-          <p>Let me feel Your nearness in every breath and every moment.</p>
-          <p>Make me ready for whatever You are unfolding next.</p>
-          <p><span class="prayer-signoff">Amen. &hearts;</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 13. PEACE — tonight I choose peace -->
-<section class="entry">
-  <div class="container">
-    <div class="season-row"><span class="season-label">Tonight, I Choose Peace</span></div>
-    <div class="entry-grid flip">
-      <div class="drawing-wrap">
-        <img src="assets/IMG_2609-peace.jpg" alt="Prayer: Tonight, I choose peace." class="drawing-img" />
-      </div>
-      <div class="entry-copy">
-        <p class="entry-season-tag">Peace</p>
-        <h2 class="entry-title">Tonight, I choose peace.</h2>
-        <div class="prayer-text">
-          <p>God, I am tired in places words don't reach. I've tried to be patient, faithful, understanding, strong &mdash; and tonight I admit I don't know what comes next.</p>
-          <p>So I release the need to figure it out. I release the need to be chosen, explained, or reassured. I release the fear that if I loosen my grip, I will lose everything.</p>
-          <p>If something is meant to stay, let it stay without my striving. If something is meant to go, let it go without breaking me.</p>
-          <p>Quiet my mind. Settle my body. Remind my heart that I am not forgotten, not behind, not unlovable, and not alone.</p>
-          <p>Give me peace that does not depend on outcomes. Rest that does not require answers. And trust that even here &mdash; especially here &mdash; You are holding me.</p>
-          <p>Tonight, I choose rest. Tonight, I choose surrender without self-abandonment. Tonight, I choose peace.</p>
-          <p><span class="prayer-signoff">Amen. &mdash; jm</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 14. ANSWERS — presence over answers -->
+<!-- ANSWERS — presence over answers -->
 <section class="entry">
   <div class="container">
     <div class="season-row"><span class="season-label">Presence Over Answers</span></div>
@@ -695,46 +524,301 @@
   </div>
 </section>
 
-<!-- 15. WORDS — the words I wanted to live inside -->
+<!-- PEACE — tonight I choose peace -->
 <section class="entry">
   <div class="container">
-    <div class="season-row"><span class="season-label">The Words I Wanted to Live Inside</span></div>
+    <div class="season-row"><span class="season-label">Tonight, I Choose Peace</span></div>
     <div class="entry-grid flip">
       <div class="drawing-wrap">
-        <img src="assets/IMG_2601-words.jpg" alt="Handwritten list of words: restoration, dedicated, atonement, consistency, gentleness, purpose..." class="drawing-img" />
+        <img src="assets/IMG_2609-peace.jpg" alt="Prayer: Tonight, I choose peace." class="drawing-img" />
       </div>
       <div class="entry-copy">
-        <p class="entry-season-tag">The words</p>
-        <h2 class="entry-title">A list of what I wanted to grow into.</h2>
+        <p class="entry-season-tag">Peace</p>
+        <h2 class="entry-title">Tonight, I choose peace.</h2>
         <div class="prayer-text">
-          <p>Restoration. Dedicated. Atonement. Consistency. Gentleness. Purpose. Spiritual. Sacred. Steady. Faith. Serenity. Grounded. Presence. Anchored. Strength. Dignity. Blessing. Divine. Trust. Grace. Patience. Safety. Freedom. Pure. Gentle. Steadfast. Love. Honor. Receptive. Worthiness. Peace. Nurture. Connected. Intuitive. Meaningful. Seen. Vulnerable. Authentic. Genuine. Compassionate. Empathy. Stillness. Sanctuary. Warmth. Harmony. Calm. Confident. Accepting. True. Balanced. Profound. Understanding. Heartfelt. Enduring. Secure. Supported. Tender. Value. Core. Soul. Unity. Vision. Growth. Wholeness. Creative. Beautiful. Alive. Hopeful. Motivated. Affection. Gratitude. Helpful. Reflect. Mercy. Restore. Care. Resilient. Thoughtful. Stable. Natural. Centered. Home. Dynamic. Comfort. Open. Healing. Awake. Respect.</p>
-        </div>
-        <div class="entry-body">
-          <p class="entry-note">Not a prayer. A list of words I wanted to live inside. Written the night I realized I couldn't do it alone.</p>
+          <p>God, I am tired in places words don't reach. I've tried to be patient, faithful, understanding, strong &mdash; and tonight I admit I don't know what comes next.</p>
+          <p>So I release the need to figure it out. I release the need to be chosen, explained, or reassured. I release the fear that if I loosen my grip, I will lose everything.</p>
+          <p>If something is meant to stay, let it stay without my striving. If something is meant to go, let it go without breaking me.</p>
+          <p>Quiet my mind. Settle my body. Remind my heart that I am not forgotten, not behind, not unlovable, and not alone.</p>
+          <p>Give me peace that does not depend on outcomes. Rest that does not require answers. And trust that even here &mdash; especially here &mdash; You are holding me.</p>
+          <p>Tonight, I choose rest. Tonight, I choose surrender without self-abandonment. Tonight, I choose peace.</p>
+          <p><span class="prayer-signoff">Amen. &mdash; jm</span></p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 16. SCRIPTURES — the ground underneath -->
+<!-- STEADY — the steadiness -->
 <section class="entry">
   <div class="container">
-    <div class="season-row"><span class="season-label">The Ground Underneath</span></div>
+    <div class="season-row"><span class="season-label">The Steadiness</span></div>
     <div class="entry-grid">
       <div class="drawing-wrap">
-        <img src="assets/IMG_2612-scriptures.jpg" alt="Handwritten scriptures from Revelation, 2 Corinthians, 1 Corinthians, Luke, Proverbs, Habakkuk" class="drawing-img" />
+        <img src="assets/IMG_2608-steady.jpg" alt="Prayer: Steady my spirit today." class="drawing-img" />
       </div>
       <div class="entry-copy">
-        <p class="entry-season-tag">The ground</p>
-        <h2 class="entry-title">The verses that carried me when I couldn't carry myself.</h2>
+        <p class="entry-season-tag">Steady</p>
+        <h2 class="entry-title">Steady my spirit today.</h2>
         <div class="prayer-text">
-          <p><em>"Behold, I have set before you an open door, and no one can shut it."</em><br /><span class="prayer-signoff">&mdash; Revelation 3:8</span></p>
-          <p><em>"For we walk by faith, not by sight."</em><br /><span class="prayer-signoff">&mdash; 2 Corinthians 5:7</span></p>
-          <p><em>"A great and effective door has opened to me, and there are many adversaries."</em><br /><span class="prayer-signoff">&mdash; 1 Corinthians 16:9</span></p>
-          <p><em>"He who is faithful in what is least is faithful also in much."</em><br /><span class="prayer-signoff">&mdash; Luke 16:10</span></p>
-          <p><em>"Trust in the Lord with all your heart, and lean not on your own understanding."</em><br /><span class="prayer-signoff">&mdash; Proverbs 3:5</span></p>
-          <p><em>"For still the vision awaits its appointed time&hellip; it will surely come; it will not delay."</em><br /><span class="prayer-signoff">&mdash; Habakkuk 2:3</span></p>
+          <p>Father, steady my spirit today. Quiet every fear and awaken every hope. Guide my steps with Your peace and my heart with Your love.</p>
+          <p>Let me feel Your nearness in every breath and every moment.</p>
+          <p>Make me ready for whatever You are unfolding next.</p>
+          <p><span class="prayer-signoff">Amen. &hearts;</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAITHFULLY — a quiet note -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">A Quiet Note</span></div>
+    <div class="entry-grid flip">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2603-faithfully.jpg" alt="Handwritten: My love is faithfully resting in the quiet corner of your heart." class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">A quiet note</p>
+        <h2 class="entry-title">My love is faithfully resting in the quiet corner of your heart.</h2>
+        <div class="prayer-text">
+          <p>My love is faithfully resting in the quiet corner of your heart.</p>
+          <p><em>"Love is patient, love is kind&hellip; it always protects, always trusts, always hopes, always perseveres."</em></p>
+          <p><span class="prayer-signoff">&mdash; 1 Corinthians 13:4, 7</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MORNING — love held in silence -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Love Held in Silence</span></div>
+    <div class="entry-grid">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2602-morning.jpg" alt="Morning Prayer for Holding Love in Silence" class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">A morning prayer</p>
+        <h2 class="entry-title">For holding love in silence.</h2>
+        <div class="prayer-text">
+          <p>Father, this morning my heart is heavy with love I cannot give and words I cannot send. But I place them all in Your hands &mdash; every thought, every ache, every longing.</p>
+          <p>Teach me that love isn't lost when it waits; it deepens. Help me remember that silence is not absence, but the sacred ground where You do Your quietest work.</p>
+          <p>When I feel the urge to reach out, remind me that You are already reaching &mdash; in ways I never could.</p>
+          <p>Let my restraint become a form of prayer. Let my patience become proof of trust. Let my peace speak louder than my words.</p>
+          <p>Remind me that love held in Your timing is never wasted &mdash; it's only being refined. Keep her safe in Your arms. Keep me steady in Your grace. And keep our hearts anchored in the promise that nothing surrendered in love is ever lost in You.</p>
+          <p><span class="prayer-signoff">Amen.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEACH — faith as resting -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Faith As Resting</span></div>
+    <div class="entry-grid flip">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2604-teach.jpg" alt="Prayer: Teach me that faith is not waiting for what I want, but resting in what You will." class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">Teach me</p>
+        <h2 class="entry-title">Faith is not waiting for what I want. It's resting in what You will.</h2>
+        <div class="prayer-text">
+          <p>Teach me that faith is not waiting for what I want, but resting in what You will.</p>
+          <p>Let Your perfect love lead us both to peace &mdash; in Your timing, by Your hands, for Your glory.</p>
+          <p><span class="prayer-signoff">Amen. &hearts;</span></p>
+          <p><em>"The God of all grace&hellip; will Himself restore, confirm, strengthen, and establish you."</em></p>
+          <p><span class="prayer-signoff">&mdash; 1 Peter 5:10</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAN — featured full-width -->
+<section class="entry entry-full">
+  <div class="container">
+    <div class="season-row"><span class="season-label">The Becoming · The Prayer for Who To Be</span></div>
+    <div class="entry-grid">
+      <div class="entry-copy">
+        <p class="entry-season-tag">The becoming</p>
+        <h2 class="entry-title">Make me into the man You created me to be.</h2>
+        <div class="prayer-text">
+          <p>Heavenly Father, make me into the man You created me to be.</p>
+          <p>Strengthen my heart, sharpen my mind, and steady my spirit. Give me the courage to rise each day with purpose, gratitude, and faith.</p>
+          <p>Guide me toward financial stability and bless the work of my hands. Let my creativity &mdash; my songs, my books, my art &mdash; find the audience You have prepared for them. Let these gifts provide for me, sustain me, and glorify You.</p>
+          <p>Keep my work flowing, my community growing, and my spirit grounded in service and love.</p>
+          <p>Help me care for my family with wisdom, compassion, and strength. Heal the grief, the loss, and the heartbreak I carry. Transform this pain into wisdom, this waiting into growth, and this longing into deeper surrender.</p>
+          <p>Prepare my heart for whatever love You have planned. Let me become the kind of man who can give and receive love with openness, humility, and truth.</p>
+          <p><span class="prayer-signoff">Amen.</span></p>
+        </div>
+      </div>
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2605-man.jpg" alt="Prayer: Heavenly Father, make me into the man You created me to be." class="drawing-img" style="max-width:100%;" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HELP — honoring the heart without fear -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Honoring the Heart Without Fear</span></div>
+    <div class="entry-grid">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2611-help.jpg" alt="Prayer: Help me hear my heart without being ruled by fear." class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">Help</p>
+        <h2 class="entry-title">Help me hear my heart without being ruled by fear.</h2>
+        <div class="prayer-text">
+          <p>God, help me hear my heart without being ruled by fear.</p>
+          <p>Show me how to honor what is true in me without grasping for outcomes. Teach me the difference between patience and self-abandonment.</p>
+          <p>Give me the courage to stay present to love &mdash; and the wisdom to know when love asks to speak, not just wait.</p>
+          <p>If I am meant to remain here, strengthen me without hardening me. If I am meant to move, let it come from clarity, not pain.</p>
+          <p>Guide me step by step &mdash; not toward certainty, but toward integrity. And help me trust that honoring my heart will not destroy what is real.</p>
+          <p><span class="prayer-signoff">Amen. &mdash; jm</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESIRES — surrender -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">The Surrender</span></div>
+    <div class="entry-grid flip">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2606-desires.jpg" alt="Prayer of surrender: Your will, not mine." class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">The surrender</p>
+        <h2 class="entry-title">Your will, not mine. Your timing, not mine. Your love, always.</h2>
+        <div class="prayer-text">
+          <p>Lord, I surrender my desires, my plans, and my path to You.</p>
+          <p>Lead me where You want me to go. Shape me into who You want me to become.</p>
+          <p>Your will, not mine. Your timing, not mine. Your love, always.</p>
+          <p><span class="prayer-signoff">Amen. &hearts;</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WITHDRAW — crying out -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">The Crying Out</span></div>
+    <div class="entry-grid">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2607-withdraw.jpg" alt="Prayer echoing Psalm 143:7: Do not withdraw Your presence from me." class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">The crying out</p>
+        <h2 class="entry-title">Do not withdraw Your presence from me.</h2>
+        <div class="prayer-text">
+          <p>Do not withdraw Your presence and favor from me, because if You do, I will be as good as dead.</p>
+          <p>My very life depends on Your presence. If You turn away from me, even for a moment, I will be spiritually and emotionally destroyed.</p>
+          <p>I will lose all hope and be no different from a dead person in the grave &mdash; powerless, forgotten, and separated from You.</p>
+          <p><em>"Do not hide Your face from me, or I will be like those who go down to the pit."</em></p>
+          <p><span class="prayer-signoff">&mdash; Psalm 143:7</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOST PATH — first prayer -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">The First Prayer · Holding Still in the Storm</span></div>
+    <div class="entry-grid flip">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2592-lost-path.jpg" alt="Prayer: God, if I'm on a lost path, I pray for the strength to hold the right path." class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">The first prayer</p>
+        <h2 class="entry-title">God, if I'm on a lost path, I pray for the strength to hold the right path.</h2>
+        <div class="prayer-text">
+          <p>God, if I'm on a lost path, I pray for the strength to hold the right path.</p>
+          <p>Until then, I will hold still in the storm &mdash; trusting that I have been resurrected into the man who offers unconditional safety.</p>
+          <p>In Jesus' name, I pray.</p>
+          <p><span class="prayer-signoff">Amen.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIRED — raw, before prayer -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Exhaustion · Losing the Self</span></div>
+    <div class="entry-grid">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2595-tired.jpg" alt="Handwritten: Have you ever been so tired that you don't know who you are?" class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">Not a prayer yet</p>
+        <h2 class="entry-title">Have you ever been so tired that you don't know who you are?</h2>
+        <div class="prayer-text">
+          <p>Have you ever been so tired that you don't know what to do?</p>
+          <p>Have you ever been so tired that you don't know who you are?</p>
+        </div>
+        <div class="entry-body">
+          <p class="entry-note">When you're tired in a way sleep can't fix, the question changes shape.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DRUGS — raw, before prayer -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Addiction · The Reckoning</span></div>
+    <div class="entry-grid flip">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2594-drugs.jpg" alt="Handwritten: I did all the drugs." class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">Not a prayer yet</p>
+        <h2 class="entry-title">I did all the drugs.</h2>
+        <div class="prayer-text">
+          <p>I did all the drugs. You name them, I did them.</p>
+          <p>And I'll do them again.</p>
+          <p>I did all the <em>DRUGS!!!</em></p>
+        </div>
+        <div class="entry-body">
+          <p class="entry-note">Before I could pray, I had to tell the truth about where I was. This page was the truth.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CRUMBLE — raw, before prayer -->
+<section class="entry">
+  <div class="container">
+    <div class="season-row"><span class="season-label">Before the Prayer · The Crumble</span></div>
+    <div class="entry-grid">
+      <div class="drawing-wrap">
+        <img src="assets/IMG_2593-crumble.jpg" alt="Handwritten journal entry: When your whole world crumbles" class="drawing-img" />
+      </div>
+      <div class="entry-copy">
+        <p class="entry-season-tag">Not a prayer yet</p>
+        <h2 class="entry-title">When your whole world crumbles, where do you go?</h2>
+        <div class="prayer-text">
+          <p>You didn't win tonight.</p>
+          <p>When your whole world crumbles and nothing else matters &mdash; what do you do? Where do you go?</p>
+        </div>
+        <div class="entry-body">
+          <p class="entry-note">Same line written twice, the second time in a shakier hand. Like the question was asking itself by then.</p>
         </div>
       </div>
     </div>
