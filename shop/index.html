@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#081225" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>The Shop — Heartfelt Gifts by Jackson Murphy</title>
+  <meta name="description" content="Mugs, apparel, and canvas prints featuring Jackson Murphy's hand-drawn art. Heartfelt gifts for the people you love — and the journey you're still on." />
+  <style>
+    :root {
+      --bg: #081225;
+      --text: #ebf0ff;
+      --muted: #c0cde8;
+      --accent: #39cae7;
+      --line: rgba(141,169,214,0.14);
+      --card: rgba(255,255,255,0.03);
+      --card-border: rgba(255,255,255,0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.6;
+    }
+    .container {
+      width: min(calc(100% - 40px), 1180px);
+      margin: 0 auto;
+    }
+
+    /* NAV */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(8,18,37,0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .brand-mark { width: 24px; height: 24px; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .nav-link {
+      font-size: 14px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 999px;
+      text-decoration: none;
+    }
+    .nav-link:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+    .btn-nav {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #39cae7 0%, #29b8d5 100%);
+      color: #05212a;
+      font-weight: 800;
+      font-size: 14px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(57,202,231,0.22);
+    }
+    .nav-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 46px; height: 46px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      cursor: pointer;
+    }
+    .nav-toggle-bar {
+      display: block;
+      width: 18px; height: 2px;
+      background: currentColor;
+      border-radius: 999px;
+      position: relative;
+    }
+    .nav-toggle-bar::before, .nav-toggle-bar::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 18px; height: 2px;
+      background: currentColor;
+      border-radius: 999px;
+    }
+    .nav-toggle-bar::before { top: -6px; }
+    .nav-toggle-bar::after { top: 6px; }
+
+    /* HERO */
+    .shop-hero {
+      padding: 88px 0 56px;
+      text-align: center;
+    }
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+    .eyebrow::before, .eyebrow::after {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: rgba(57,202,231,0.4);
+    }
+    .shop-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      max-width: 22ch;
+      margin: 0 auto 24px;
+      color: #f0f4ff;
+    }
+    .shop-hero p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 52ch;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+
+    /* SECTION HEAD */
+    .section-head {
+      padding: 32px 0 28px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      border-top: 1px solid var(--line);
+      margin-top: 36px;
+    }
+    .section-head h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #f0f4ff;
+    }
+    .section-head .section-sub {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    /* PRODUCT GRID */
+    .shop-grid-wrap { padding: 8px 0 96px; }
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(57,202,231,0.35);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    }
+    .product-card-image {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      overflow: hidden;
+      background: #0b1a35;
+    }
+    .product-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .product-card:hover .product-card-image img { transform: scale(1.04); }
+    .product-card-body {
+      padding: 20px 22px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+    .product-tag {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .product-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #f0f4ff;
+    }
+    .product-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 8px;
+    }
+    .product-price {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #f0f4ff;
+    }
+    .product-cta {
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+    .product-shipping {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(48,189,107,0.14);
+      color: #6be0a0;
+      width: max-content;
+    }
+
+    /* CLOSING CTA */
+    .shop-closing {
+      padding: 70px 0 100px;
+      text-align: center;
+      border-top: 1px solid var(--line);
+    }
+    .shop-closing h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #f0f4ff;
+      max-width: 24ch;
+      margin: 0 auto 18px;
+      line-height: 1.15;
+    }
+    .shop-closing p { color: var(--muted); max-width: 50ch; margin: 0 auto 28px; }
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      min-height: 46px;
+      padding: 0 22px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #39cae7 0%, #29b8d5 100%);
+      color: #05212a;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(57,202,231,0.22);
+    }
+
+    /* FOOTER */
+    .site-footer {
+      padding: 24px 0 42px;
+      color: #94a8d0;
+      font-size: 14px;
+      text-align: center;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 1000px) {
+      .shop-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 720px) {
+      .nav-toggle { display: inline-flex; margin-left: auto; }
+      .nav-links {
+        display: none;
+        width: 100%;
+        margin-top: 14px;
+        padding: 14px;
+        border-radius: 18px;
+        background: rgba(13,26,49,0.96);
+        border: 1px solid rgba(255,255,255,0.08);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+      .nav-links.is-open { display: flex; }
+      .nav-link { display: block; padding: 12px 14px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; }
+      .btn-nav { text-align: center; justify-content: center; }
+      .shop-hero { padding: 60px 0 36px; }
+      .shop-grid { grid-template-columns: 1fr; gap: 22px; }
+      .shop-closing { padding: 56px 0 80px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../index.html" aria-label="Rising Creative Agency home">
+      <img src="../assets/rising-creative-agency-mark.svg" alt="Rising Creative Agency mark" class="brand-mark" />
+      <span>RISING CREATIVE <span style="color:#7d8289;">AGENCY</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav class="nav-links" id="primary-nav" aria-label="Primary">
+      <a class="nav-link" href="../artists.html">Artists</a>
+      <a class="nav-link" href="../books.html">Books</a>
+      <a class="nav-link" href="../artwork.html">Artwork</a>
+      <a class="nav-link" href="../music.html">Music</a>
+      <a class="nav-link" href="../shop/index.html" aria-current="page">Shop</a>
+      <a class="nav-link" href="../about-rca.html">About RCA</a>
+      <a class="btn-nav" href="../start-here.html">Start Here</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="shop-hero">
+    <div class="container">
+      <p class="eyebrow">The Shop &middot; Heartfelt Gifts</p>
+      <h1>Pieces of the work, made to live with you.</h1>
+      <p>Mugs to hold in the morning. Wearable reminders for the hard days. Canvas pieces for the wall where you sit and breathe. Each one carries a line of art that came out of a real season &mdash; and is made to find you in yours.</p>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <div class="container">
+    <div class="section-head">
+      <h2>All products</h2>
+      <span class="section-sub">Shipped directly through Etsy</span>
+    </div>
+  </div>
+
+  <section class="shop-grid-wrap">
+    <div class="container">
+      <div class="shop-grid">
+
+        <a class="product-card" href="https://www.etsy.com/listing/4506110500/love-takes-courage-mug-romantic-coffee" target="_blank" rel="noopener noreferrer" aria-label="Love Takes Courage Mug on Etsy">
+          <div class="product-card-image">
+            <img src="assets/mug-love-takes-courage.jpg" alt="Love Takes Courage ceramic mug with a small red heart, styled on a cozy table with morning light" loading="lazy" />
+          </div>
+          <div class="product-card-body">
+            <p class="product-tag">Mug &middot; Ceramic</p>
+            <h3 class="product-title">Love Takes Courage Mug</h3>
+            <p class="product-meta">
+              <span class="product-cta">View on Etsy &rarr;</span>
+            </p>
+          </div>
+        </a>
+
+        <a class="product-card" href="https://www.etsy.com/listing/4506348952/rooted-tree-mug-inspirational-coffee-mug" target="_blank" rel="noopener noreferrer" aria-label="Rooted Tree Mug on Etsy">
+          <div class="product-card-image">
+            <img src="assets/mug-rooted.jpg" alt="Rooted Tree ceramic mug featuring a hand-drawn tree of life, styled with dried flowers and a candle" loading="lazy" />
+          </div>
+          <div class="product-card-body">
+            <p class="product-tag">Mug &middot; Ceramic</p>
+            <h3 class="product-title">Rooted Tree Mug</h3>
+            <p class="product-meta">
+              <span class="product-cta">View on Etsy &rarr;</span>
+            </p>
+          </div>
+        </a>
+
+        <a class="product-card" href="https://www.etsy.com/listing/4506360382/still-here-mug-inspirational-tree-coffee" target="_blank" rel="noopener noreferrer" aria-label="Still Here Mug on Etsy">
+          <div class="product-card-image">
+            <img src="assets/mug-still-here.jpg" alt="Still Here ceramic mug featuring a tree-of-life illustration, styled beside an open journal" loading="lazy" />
+          </div>
+          <div class="product-card-body">
+            <p class="product-tag">Mug &middot; Ceramic</p>
+            <h3 class="product-title">Still Here Mug</h3>
+            <p class="product-meta">
+              <span class="product-cta">View on Etsy &rarr;</span>
+            </p>
+          </div>
+        </a>
+
+        <a class="product-card" href="https://www.etsy.com/listing/4506373254/love-takes-courage-sweatshirt-cozy" target="_blank" rel="noopener noreferrer" aria-label="Love Takes Courage Sweatshirt on Etsy">
+          <div class="product-card-image">
+            <img src="assets/sweatshirt-love-takes-courage.jpg" alt="Love Takes Courage cream sweatshirt being worn in a softly lit reading nook" loading="lazy" />
+          </div>
+          <div class="product-card-body">
+            <p class="product-tag">Apparel &middot; Sweatshirt</p>
+            <h3 class="product-title">Love Takes Courage Sweatshirt</h3>
+            <span class="product-shipping">Free shipping</span>
+            <p class="product-meta">
+              <span class="product-cta">View on Etsy &rarr;</span>
+            </p>
+          </div>
+        </a>
+
+        <a class="product-card" href="https://www.etsy.com/listing/4506385285/the-shepherd-who-calls-you-by-name" target="_blank" rel="noopener noreferrer" aria-label="The Shepherd Who Calls You by Name Canvas on Etsy">
+          <div class="product-card-image">
+            <img src="assets/canvas-shepherd.jpg" alt="The Shepherd Who Calls You by Name canvas print hanging above a nursery crib" loading="lazy" />
+          </div>
+          <div class="product-card-body">
+            <p class="product-tag">Wall Art &middot; Canvas</p>
+            <h3 class="product-title">The Shepherd Who Calls You by Name</h3>
+            <span class="product-shipping">Free shipping</span>
+            <p class="product-meta">
+              <span class="product-cta">View on Etsy &rarr;</span>
+            </p>
+          </div>
+        </a>
+
+        <a class="product-card" href="https://www.etsy.com/listing/4506397779/still-here-canvas-print" target="_blank" rel="noopener noreferrer" aria-label="Still Here Canvas Print on Etsy">
+          <div class="product-card-image">
+            <img src="assets/canvas-still-here.jpg" alt="Still Here canvas print hanging in a softly lit bedroom corner above a cream armchair" loading="lazy" />
+          </div>
+          <div class="product-card-body">
+            <p class="product-tag">Wall Art &middot; Canvas</p>
+            <h3 class="product-title">Still Here Canvas Print</h3>
+            <span class="product-shipping">Free shipping</span>
+            <p class="product-meta">
+              <span class="product-cta">View on Etsy &rarr;</span>
+            </p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="shop-closing">
+    <div class="container">
+      <h2>Made to find someone in their middle.</h2>
+      <p>If a piece of this finds the right person at the right moment &mdash; that&rsquo;s the whole point. Thank you for supporting the work.</p>
+      <a class="btn-cta" href="../start-here.html">Start Here</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Rising Creative Agency. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const navToggle = document.querySelector('.nav-toggle');
+  const primaryNav = document.getElementById('primary-nav');
+  if (navToggle && primaryNav) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!isOpen));
+      primaryNav.classList.toggle('is-open', !isOpen);
+    });
+    primaryNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navToggle.setAttribute('aria-expanded', 'false');
+      primaryNav.classList.remove('is-open');
+    }));
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 720) {
+        navToggle.setAttribute('aria-expanded', 'false');
+        primaryNav.classList.remove('is-open');
+      }
+    });
+  }
+</script>
+</body>
+</html>
