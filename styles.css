@@ -1991,3 +1991,7 @@ p { margin: 0; color: var(--muted); }
   background: var(--line);
 }
 
+
+/* Availability labels and native hidden state for catalog previews. */
+.availability-note { display: inline-block; color: inherit; font-weight: 600; padding: .5rem 0; }
+[hidden] { display: none !important; }
